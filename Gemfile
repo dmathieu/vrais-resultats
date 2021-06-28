@@ -1,0 +1,19 @@
+source "https://rubygems.org"
+
+gem 'nanoc', '~> 4.12.2'
+gem 'adsf'
+
+gem 'guard-nanoc'
+
+gem 'w3c_validators'
+
+# CSS Feed
+gem 'builder'
+
+# CSS
+gem 'compass', '~> 1.0.3'
+gem 'bootstrap-sass', '~> 3.4.1'
+
+group :development do
+  gem 'webrick'
+end

@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+puts "Running bundle install"
+`bundle install`
+
+t = []
+
+t << Thread.new do
+  puts "Running the files auto-reloaded"
+  `bundle exec guard`
+end
+
+t << Thread.new do
+  puts "Running the server"
+  `bundle exec nanoc view`
+end
+
+t.map(&:join)
