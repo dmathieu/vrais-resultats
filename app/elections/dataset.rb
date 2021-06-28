@@ -8,7 +8,12 @@ module Elections
 
     def entries
       content.map do |c|
-        Entry.new(c)
+        case c["format"]
+        when "xlsx"
+          XlsxEntry.new(c)
+        else
+          raise "unknown format #{c["format"]}"
+        end
       end
     end
 
@@ -21,15 +26,7 @@ module Elections
     def content
       @content ||= JSON.parse(fetch.read)
     end
-
-    class Entry
-      def initialize(config)
-        @config = config
-      end
-
-      def content
-        @content ||= Elections::Download.new(@config["url"]).data
-      end
-    end
   end
 end
+
+require 'elections/dataset/xlsx_entry'

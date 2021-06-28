@@ -16,6 +16,7 @@ gem "bootstrap-sass", "~> 3.4.1"
 
 # Results generation
 gem "faraday"
+gem "roo"
 
 group :development do
   gem "webrick"

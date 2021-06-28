@@ -14,4 +14,8 @@ RSpec.configure do |config|
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
+
+  def file_fixture(name)
+    File.open(File.expand_path("spec/fixtures/" + name))
+  end
 end

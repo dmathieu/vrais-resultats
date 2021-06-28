@@ -1,10 +1,12 @@
 [
 	{
 		"name": "Election 1",
+		"format": "xlsx",
 		"url": "https://example.com"
 	},
 	{
 		"name": "Election 2",
+		"format": "xlsx",
 		"url": "https://example.fr"
 	}
 ]
