@@ -1,4 +1,5 @@
 require "faraday"
+require "faraday_middleware"
 
 module Elections
   class Download
@@ -7,13 +8,20 @@ module Elections
     end
 
     def data
-      StringIO.new(fetch.body)
+      fetch.body
     end
 
     private
 
     def fetch
-      @resp = Faraday.get(@url)
+      @resp = client.get(@url)
+    end
+
+    def client
+      @client ||= Faraday.new do |faraday|
+        faraday.use FaradayMiddleware::FollowRedirects
+        faraday.adapter Faraday.default_adapter
+      end
     end
   end
 end

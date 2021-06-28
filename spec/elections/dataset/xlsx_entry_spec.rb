@@ -1,5 +1,5 @@
 describe Elections::Dataset::XlsxEntry do
-  subject { described_class.new(data) }
+  subject { described_class.new({}, data) }
   let(:data) { file_fixture("municipales.xlsx") }
 
   it "loads the data" do

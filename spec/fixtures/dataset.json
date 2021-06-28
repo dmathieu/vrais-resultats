@@ -2,11 +2,13 @@
 	{
 		"name": "Election 1",
 		"format": "xlsx",
-		"url": "https://example.com"
+		"url": "https://example.com",
+		"slug": "election-1"
 	},
 	{
 		"name": "Election 2",
 		"format": "xlsx",
-		"url": "https://example.fr"
+		"url": "https://example.fr",
+		"slug": "election-2"
 	}
 ]

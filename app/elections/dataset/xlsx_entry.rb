@@ -3,11 +3,7 @@ require "roo"
 
 module Elections
   class Dataset
-    class XlsxEntry
-      def initialize(data)
-        @raw_data = data
-      end
-
+    class XlsxEntry < Base
       def content
         entries = []
 
@@ -28,7 +24,7 @@ module Elections
       private
 
       def data
-        @data ||= Roo::Excelx.new(@raw_data)
+        @data ||= Roo::Excelx.new(StringIO.new(@raw_data))
       end
     end
   end

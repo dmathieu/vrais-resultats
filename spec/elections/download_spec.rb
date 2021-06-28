@@ -4,6 +4,6 @@ describe Elections::Download do
       .to_return(status: 200, body: "Hello World", headers: {})
 
     content = described_class.new("https://example.com")
-    expect(content.data.read).to eql("Hello World")
+    expect(content.data).to eql("Hello World")
   end
 end
