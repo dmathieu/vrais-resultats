@@ -14,6 +14,11 @@ gem 'builder'
 gem 'compass', '~> 1.0.3'
 gem 'bootstrap-sass', '~> 3.4.1'
 
+# Results generation
+gem 'faraday'
+
 group :development do
   gem 'webrick'
+  gem 'rspec'
+  gem 'webmock'
 end
