@@ -14,10 +14,9 @@ module Elections
         i = 0
         data.sheet(0).each_row_streaming do |row|
           entries[i] ||= []
-          j = 0
-          row.map do |cell|
-            entries[i][j] = cell.value
-            j += 1
+          row.each do |cell|
+            coord = cell.coordinate
+            entries[i][coord[1] - 1] = cell.value
           end
 
           i += 1
