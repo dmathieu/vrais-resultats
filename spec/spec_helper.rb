@@ -1,7 +1,7 @@
-$LOAD_PATH.unshift File.expand_path('../app', __dir__)
-require 'elections'
+$LOAD_PATH.unshift File.expand_path("../app", __dir__)
+require "elections"
 
-require 'webmock/rspec'
+require "webmock/rspec"
 WebMock.disable_net_connect!
 
 RSpec.configure do |config|

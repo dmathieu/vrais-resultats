@@ -1,12 +1,12 @@
 #!/usr/bin/env ruby
 
-compile '/**/*.html' do
-  layout '/default.*'
+compile "/**/*.html" do
+  layout "/default.*"
 
-  if item.identifier =~ '**/index.*'
+  if "**/index.*".match?(item.identifier)
     write item.identifier.to_s
   else
-    write item.identifier.without_ext + '/index.html'
+    write item.identifier.without_ext + "/index.html"
   end
 end
 
@@ -14,7 +14,7 @@ end
 # using the :kramdown filter. It is commented out by default, because kramdown
 # is not bundled with Nanoc or Ruby.
 #
-#compile '/**/*.md' do
+# compile '/**/*.md' do
 #  filter :kramdown
 #  layout '/default.*'
 #
@@ -23,10 +23,10 @@ end
 #  else
 #    write item.identifier.without_ext + '/index.html'
 #  end
-#end
+# end
 
-compile '/**/*' do
+compile "/**/*" do
   write item.identifier.to_s
 end
 
-layout '/**/*', :erb
+layout "/**/*", :erb

@@ -1,6 +1,5 @@
 module Elections
-
 end
 
-require 'elections/dataset'
-require 'elections/download'
+require "elections/dataset"
+require "elections/download"

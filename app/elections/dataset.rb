@@ -1,4 +1,4 @@
-require 'json'
+require "json"
 
 module Elections
   class Dataset
@@ -13,6 +13,7 @@ module Elections
     end
 
     private
+
     def fetch
       @data = File.open(File.expand_path(@path))
     end
