@@ -29,4 +29,4 @@ module Elections
   end
 end
 
-require 'elections/dataset/xlsx_entry'
+require "elections/dataset/xlsx_entry"

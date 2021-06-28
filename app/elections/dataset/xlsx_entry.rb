@@ -1,5 +1,5 @@
-require 'tempfile'
-require 'roo'
+require "tempfile"
+require "roo"
 
 module Elections
   class Dataset
@@ -17,10 +17,10 @@ module Elections
           j = 0
           row.map do |cell|
             entries[i][j] = cell.value
-            j+=1
+            j += 1
           end
 
-          i+=1
+          i += 1
         end
 
         entries
