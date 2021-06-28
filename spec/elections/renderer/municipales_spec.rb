@@ -1,6 +1,6 @@
 describe Elections::Renderer::Municipales do
   subject { described_class.new(content) }
-  let(:content) { Elections::Dataset::XlsxEntry.new(file_fixture("municipales.xslx")).content }
+  let(:content) { Elections::Dataset::XlsxEntry.new(file_fixture("municipales.xlsx")).content }
 
   describe "new" do
     it "turns a content array into a hash" do

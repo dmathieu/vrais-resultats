@@ -13,7 +13,7 @@ describe Elections::Dataset do
 
   it "loads fetches an entry's content" do
     stub_request(:get, "https://example.com")
-      .to_return(status: 200, body: file_fixture("municipales.xslx").read, headers: {})
+      .to_return(status: 200, body: file_fixture("municipales.xlsx").read, headers: {})
 
     d = described_class.new("spec/fixtures/dataset.json")
     expect(d.entries.first.content).not_to be_empty
