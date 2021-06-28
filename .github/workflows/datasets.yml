@@ -1,0 +1,17 @@
+name: Datasets
+on: push
+jobs:
+  test:
+    name: Check clean
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0
+          bundler-cache: true
+      - name: Check datasets
+        run: bundle exec bin/check-datasets

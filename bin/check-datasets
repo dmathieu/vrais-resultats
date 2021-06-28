@@ -1,0 +1,18 @@
+#!/bin/bash -e
+
+datasetsPath=datasets/
+
+if ! git diff --quiet --exit-code origin/main...HEAD $datasetsPath &> /dev/null; then
+	echo "Datasets aren't clean before updating them"
+	git status
+	exit 1
+fi
+
+bin/datasets
+
+
+if ! git diff --quiet --exit-code origin/main...HEAD $datasetsPath &> /dev/null; then
+	echo "Datasets aren't clean after updating them"
+	git status
+	exit 1
+fi

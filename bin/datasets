@@ -4,6 +4,6 @@ $LOAD_PATH.unshift File.expand_path("../app", __dir__)
 require "elections"
 
 Elections::Dataset.new("datasets.json").entries.each do |entry|
-  print "Saving #{entry.name}"
+  print "Saving #{entry.name}\n"
   entry.save
 end
