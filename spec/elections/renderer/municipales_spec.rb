@@ -1,0 +1,10 @@
+describe Elections::Renderer::Municipales do
+  subject { described_class.new(content) }
+  let(:content) { Elections::Dataset::XlsxEntry.new(file_fixture("municipales.xslx")).content }
+
+  describe "new" do
+    it "turns a content array into a hash" do
+      expect(subject.content).to eql({})
+    end
+  end
+end

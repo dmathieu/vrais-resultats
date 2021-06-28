@@ -7,12 +7,12 @@ module Elections
     end
 
     def entries
-      content.map do |c|
-        case c["format"]
+      content.lazy.map do |config|
+        case config["format"]
         when "xlsx"
-          XlsxEntry.new(c)
+          XlsxEntry.new(get_dataset(config))
         else
-          raise "unknown format #{c["format"]}"
+          raise "unknown format #{config["format"]}"
         end
       end
     end
@@ -25,6 +25,10 @@ module Elections
 
     def content
       @content ||= JSON.parse(fetch.read)
+    end
+
+    def get_dataset(config)
+      Elections::Download.new(config["url"]).data
     end
   end
 end

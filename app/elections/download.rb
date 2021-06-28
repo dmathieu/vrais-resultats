@@ -7,7 +7,7 @@ module Elections
     end
 
     def data
-      fetch.body
+      StringIO.new(fetch.body)
     end
 
     private

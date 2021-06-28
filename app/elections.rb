@@ -3,3 +3,4 @@ end
 
 require "elections/dataset"
 require "elections/download"
+require "elections/renderer"

@@ -4,8 +4,8 @@ require "roo"
 module Elections
   class Dataset
     class XlsxEntry
-      def initialize(config)
-        @config = config
+      def initialize(data)
+        @raw_data = data
       end
 
       def content
@@ -29,7 +29,7 @@ module Elections
       private
 
       def data
-        @data ||= Roo::Excelx.new(StringIO.new(Elections::Download.new(@config["url"]).data))
+        @data ||= Roo::Excelx.new(@raw_data)
       end
     end
   end
