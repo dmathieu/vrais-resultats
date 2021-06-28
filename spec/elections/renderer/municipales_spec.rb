@@ -4,7 +4,7 @@ describe Elections::Renderer::Municipales do
 
   describe "new" do
     it "turns a content array into a hash" do
-      expect(subject.content).to eql({})
+      expect(subject.content).not_to be_empty
     end
   end
 end
