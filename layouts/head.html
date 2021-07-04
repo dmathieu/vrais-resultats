@@ -1,0 +1,23 @@
+<head>
+	<meta charset="utf-8">
+	<title><%= page_title(@item) %></title>
+	<link rel="stylesheet" href="/assets/stylesheets/application.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="/assets/stylesheets/application.css">
+	<script async src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+	<script async src="/assets/javascripts/bootstrap.js"></script>
+	<script async src="/assets/javascripts/application.js"></script>
+
+	<% if production? %>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-219HJLLS79"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-219HJLLS79');
+		</script>
+	<% end %>
+</head>

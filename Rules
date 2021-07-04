@@ -1,0 +1,54 @@
+#!/usr/bin/env ruby
+
+unless defined? LOADED_DEFAULT_CONFIG
+  LOADED_DEFAULT_CONFIG = true
+  require "compass"
+  Compass.add_project_configuration "compass.rb"
+end
+
+preprocess do
+  auto_generate_pages
+end
+
+compile "/**/*.html" do
+  layout "/default.*"
+end
+compile "/**/*.scss" do
+  filter :sass, Compass.sass_engine_options
+end
+compile "/**/*.{js,json}.erb" do
+  filter :erb
+end
+compile "/**/*.erb" do
+  filter :erb
+  layout "/default.*"
+end
+compile "/**/*" do
+  write item.identifier.to_s
+end
+
+#
+# Routes
+#
+
+route "/**/*.{js,json}.*" do
+  item.identifier.without_ext
+end
+
+route "/**/*.scss" do
+  item.identifier.without_ext + ".css"
+end
+
+route "/**/*.css" do
+  item.identifier
+end
+
+route "/**/*.{html,md,erb}" do
+  if /\/index\.*/.match?(item.identifier.to_s)
+    "/index.html"
+  else
+    item.identifier.without_ext + "/index.html"
+  end
+end
+
+layout "/**/*", :erb

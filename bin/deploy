@@ -1,0 +1,8 @@
+#!/bin/bash -e
+
+if ! netlify -v; then
+	npm install netlify-cli -g
+fi
+
+bundle exec nanoc compile
+netlify deploy --prod

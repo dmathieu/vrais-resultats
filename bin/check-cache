@@ -1,0 +1,18 @@
+#!/bin/bash -e
+
+cachePath=cache/
+
+if ! git diff --quiet --exit-code origin/main...HEAD $cachePath &> /dev/null; then
+	echo "Cache isn't clean before updating it"
+	git status
+	exit 1
+fi
+
+rm -rf cache
+bin/cache
+
+if ! git diff --quiet --exit-code origin/main...HEAD $cachePath &> /dev/null; then
+	echo "Cache isn't clean clean after updating it"
+	git status
+	exit 1
+fi
