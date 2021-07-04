@@ -1,0 +1,28 @@
+[
+	{
+		"name": "Election 1",
+		"format": "xlsx",
+		"data": [
+			{
+				"name": "Tour unique",
+				"url": "https://example.com"
+			}
+		],
+		"reducer": "municipales",
+		"annee": 2020,
+		"slug": "election-1"
+	},
+	{
+		"name": "Election 2",
+		"format": "xlsx",
+		"data": [
+			{
+				"name": "Tour unique",
+				"url": "https://example.com"
+			}
+		],
+		"reducer": "municipales",
+		"annee": 2020,
+		"slug": "election-2"
+	}
+]

@@ -1,0 +1,5 @@
+ignore:
+  - 'compass.rb':
+    - 'Lint/UselessAssignment'
+  - 'lib/*.rb':
+    - 'Style/MixinUsage'

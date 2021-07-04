@@ -1,0 +1,19 @@
+[
+	{
+		"name": "Municipales 2020",
+		"format": "xlsx",
+		"data": [
+			{
+				"name": "Premier tour",
+				"url": "https://www.data.gouv.fr/fr/datasets/r/1f67d380-6810-4f93-a952-80ee18c50d78"
+			},
+			{
+				"name": "Second tour",
+				"url": "https://www.data.gouv.fr/fr/datasets/r/a812e7c7-42bb-4120-b747-f4f7260f688d"
+			}
+		],
+		"reducer": "municipales",
+		"annee": 2020,
+		"slug": "municipales-2020"
+	}
+]

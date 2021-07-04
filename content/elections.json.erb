@@ -1,0 +1,6 @@
+<%= all_elections.map do |i|
+  {
+    path: i.path,
+    name: "#{i[:name]} - #{parent_of(i)[:name]}"
+  }
+end.to_json %>

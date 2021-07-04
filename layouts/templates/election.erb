@@ -1,0 +1,84 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <% @item[:breadcrumb].each do |b| %>
+      <li class="breadcrumb-item <%= is_current?(b[:path]) ? "active" : "" %>">
+        <% if is_current?(b[:path]) %>
+          <%= b[:name] %>
+        <% else %>
+          <a href="<%= b[:path] %>"><%= b[:name] %></a>
+        <% end %>
+      </li>
+    <% end %>
+  </ol>
+</nav>
+
+<div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+  <div class="col-md-12 px-0">
+    <h1 class="display-4 fst-italic"><%= @item[:election] %> - <%= @item[:name] %></h1>
+  </div>
+</div>
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="real-tab" data-bs-toggle="tab" data-bs-target="#real" type="button" role="tab" aria-controls="real" aria-selected="true">Vrais Résultats</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="official-tab" data-bs-toggle="tab" data-bs-target="#official" type="button" role="tab" aria-controls="official" aria-selected="true">Résultats Officiels</button>
+  </li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane fade show active" id="real" role="tabpanel" aria-labelledby="real-tab">
+    <% @item[:resultats].compact.each_with_index do |resultat,index| %>
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#tour-<%= index %>" aria-expanded="true" aria-controls="collapseOne">
+              <%= resultat[:name] %>
+            </button>
+          </h5>
+        </div>
+
+        <div id="tour-<%= index %>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <% sort_candidats(all_data(resultat)).each do |candidat| %>
+              <%= candidat[:prenom] %> <%= candidat[:nom] %>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: <%= real_result(resultat, candidat) %>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <%= real_result(resultat, candidat) %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="tab-pane fade" id="official" role="tabpanel" aria-labelledby="official-tab">
+    <% @item[:resultats].compact.each_with_index do |resultat,index| %>
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#tour-<%= index %>" aria-expanded="true" aria-controls="collapseOne">
+              <%= resultat[:name] %>
+            </button>
+          </h5>
+        </div>
+
+        <div id="tour-<%= index %>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <% sort_candidats(resultat[:candidats]).each do |candidat| %>
+              <%= candidat[:prenom] %> <%= candidat[:nom] %>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: <%= official_result(resultat, candidat) %>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <%= official_result(resultat, candidat) %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

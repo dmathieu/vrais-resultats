@@ -1,0 +1,21 @@
+<div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+  <div class="col-md-12 px-0">
+    <h1 class="display-4 fst-italic">Elections les plus récentes</h1>
+  </div>
+</div>
+
+<div class="row mb-2">
+  <div class="row mb-2">
+    <% dataset.each do |election| %>
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <a href="<%= election[:name].parameterize %>" class="stretched-link">
+              <h3 class="mb-0"><%= election[:name] %></h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
