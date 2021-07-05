@@ -2,7 +2,7 @@ describe VR::Mapper do
   describe "with a valid dataset" do
     it "loads an xlsx document" do
       d = described_class.new({format: "xlsx"})
-      expect(d).to be_a(VR::Mapper::Xlsx)
+      expect(d).to be_a(VR::Mapper::Roo)
     end
   end
 

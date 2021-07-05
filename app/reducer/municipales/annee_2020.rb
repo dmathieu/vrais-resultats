@@ -33,28 +33,27 @@ module VR
         end
 
         def build_breadcrumb(row)
-          data = []
-          data << {
-            name: @config[:name],
-            path: "/" + @config[:name].parameterize
-          }
-          data << {
-            name: row[1],
-            path: "/" + @config[:name].parameterize + "/" + row[1].parameterize,
-            type: :departement
-          }
-          data << {
-            name: row[NAMEKEY],
-            path: "/" + @config[:name].parameterize + "/" + row[1].parameterize + "/" + row[NAMEKEY].parameterize
-          }
-
-          data
+          [
+            {
+              name: @config[:name],
+              path: "/" + @config[:name].parameterize
+            },
+            {
+              name: row[1],
+              path: "/" + @config[:name].parameterize + "/" + row[1].parameterize,
+              type: :departement
+            },
+            {
+              name: row[NAMEKEY],
+              path: "/" + @config[:name].parameterize + "/" + row[1].parameterize + "/" + row[NAMEKEY].parameterize
+            }
+          ]
         end
 
         def parse_file(file, index, data)
           file[:content].each_with_index do |row, i|
             next if i == 0
-            next if row[NAMEKEY] == false
+            next if row[NAMEKEY] == false || row[NAMEKEY].nil?
             next if row.empty?
 
             data[main_key(row)] ||= {

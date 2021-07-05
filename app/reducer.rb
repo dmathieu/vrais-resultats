@@ -1,5 +1,6 @@
 require "reducer/base"
 require "reducer/municipales"
+require "reducer/presidentielles"
 
 module VR
   module Reducer

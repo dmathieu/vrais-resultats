@@ -1,9 +1,9 @@
 module VR
   module Mapper
     def self.new(config)
-      case config[:format]
-      when "xlsx"
-        VR::Mapper::Xlsx.new(config)
+      case config[:format].to_sym
+      when *::Roo::CLASS_FOR_EXTENSION.keys
+        VR::Mapper::Roo.new(config)
       else
         raise "unknown format #{config[:format]}"
       end
@@ -12,4 +12,4 @@ module VR
 end
 
 require "mapper/base"
-require "mapper/xlsx"
+require "mapper/roo"

@@ -6,12 +6,8 @@ module Main
   def page_title(item)
     elements = []
 
-    if @item.key?(:breadcrumb)
-      @item[:breadcrumb].reverse_each do |b|
-        elements << b[:name]
-      end
-    end
     elements << @item[:name] if @item.key?(:name)
+    elements << @item[:election] if @item.key?(:election)
     elements << "Vrais Résultats"
     elements.join(" - ")
   end

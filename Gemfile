@@ -18,6 +18,7 @@ gem "bootstrap-sass", "~> 3.4.1"
 gem "faraday"
 gem "faraday_middleware"
 gem "roo"
+gem "roo-xls"
 gem "activesupport"
 
 group :development do

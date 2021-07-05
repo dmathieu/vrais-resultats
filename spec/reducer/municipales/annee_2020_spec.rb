@@ -1,6 +1,6 @@
 describe VR::Reducer::Municipales::Annee2020 do
   subject { described_class.new({name: "municipales"}, content) }
-  let(:content) { VR::Mapper::Xlsx.new(config).send(:content) }
+  let(:content) { VR::Mapper::Roo.new(config).send(:content) }
   let(:config) {
     {
       data: [

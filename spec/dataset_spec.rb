@@ -5,6 +5,8 @@ describe VR::Dataset do
         case arg[:format]
         when "xlsx"
           {name: "Tour unique", path: "spec/fixtures/municipales_2020/tour-1.xlsx"}
+        when "xls"
+          {name: "Tour unique", path: "spec/fixtures/presidentielles_2017/tour-1.xls"}
         else
           raise "unknown format #{arg[:format]}"
         end
