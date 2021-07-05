@@ -1,6 +1,6 @@
 [
 	{
-		"name": "Election 1",
+		"name": "Election in XLSX",
 		"format": "xlsx",
 		"data": [
 			{
@@ -13,16 +13,16 @@
 		"slug": "election-1"
 	},
 	{
-		"name": "Election 2",
-		"format": "xlsx",
+		"name": "Election in XLS",
+		"format": "xls",
 		"data": [
 			{
 				"name": "Tour unique",
 				"url": "https://example.com"
 			}
 		],
-		"reducer": "municipales",
-		"annee": 2020,
+		"reducer": "presidentielles",
+		"annee": 2017,
 		"slug": "election-2"
 	}
 ]
