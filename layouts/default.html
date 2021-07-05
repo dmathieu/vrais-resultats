@@ -1,12 +1,16 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="en" class="h-100">
 	<%= render '/head.*' %>
-	<body>
+	<body class="d-flex flex-column h-100">
 		<div class="container">
 			<%= render '/header.*' %>
 		</div>
 		<main class="container">
 			<%= yield %>
 		</main>
+
+		<footer class="mt-auto py-3 bg-light">
+			<p>Construit avec &hearts; par <a href="https://dmathieu.com">Damien Mathieu</a></p>
+		</footer>
 	</body>
 </html>
