@@ -49,6 +49,9 @@
           <div class="card-body">
             <% sort_candidats(all_data(resultat)).each do |candidat| %>
               <%= candidat[:prenom] %> <%= candidat[:nom] %>
+              <% if !candidat[:liste].empty? %>
+                - <%= candidat[:liste].titleize %>
+              <% end %>
               <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: <%= real_result(resultat, candidat) %>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                   <%= real_result(resultat, candidat) %>
@@ -81,6 +84,9 @@
           <div class="card-body">
             <% sort_candidats(resultat[:candidats]).each do |candidat| %>
               <%= candidat[:prenom] %> <%= candidat[:nom] %>
+              <% if !candidat[:liste].empty? %>
+                - <%= candidat[:liste].titleize %>
+              <% end %>
               <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: <%= official_result(resultat, candidat) %>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                   <%= official_result(resultat, candidat) %>

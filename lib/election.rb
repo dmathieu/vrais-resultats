@@ -20,11 +20,13 @@ module Election
     candidats << {
       prenom: "",
       nom: "Abstentions",
+      liste: "",
       voix: resultat[:abstentions]
     }
     candidats << {
       prenom: "",
       nom: "Blancs + Nuls",
+      liste: "",
       voix: resultat[:blancs] + resultat[:nuls]
     }
     candidats
