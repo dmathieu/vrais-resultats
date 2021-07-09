@@ -19,15 +19,17 @@ module VR
 
     def each(&block)
       config.each do |c|
-        mapper = VR::Mapper.new(c)
-        path = cache_path(c)
+        VR.tracer.in_span("dataset.#{c[:name].parameterize}") do |span|
+          mapper = VR::Mapper.new(c)
+          path = cache_path(c)
 
-        unless File.exist?(path)
-          r = VR::Reducer.new(c, mapper)
-          File.write(path, r.content.to_json)
+          unless File.exist?(path)
+            r = VR::Reducer.new(c, mapper)
+            File.write(path, r.content.to_json)
+          end
+
+          block.call(JSON.parse(File.read(path)).deep_symbolize_keys)
         end
-
-        block.call(JSON.parse(File.read(path)).deep_symbolize_keys)
       end
     end
 

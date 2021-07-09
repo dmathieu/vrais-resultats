@@ -8,10 +8,21 @@ module VR
 
       def each(&block)
         raw_data.each do |v|
-          block.call({
-            name: v[:name],
-            content: ::Roo::Spreadsheet.open(v[:path]).sheet(0).lazy
-          })
+          VR.tracer.in_span("mapper.each") do |span|
+            span.set_attribute("mapper", v[:name])
+            block.call({
+              name: v[:name],
+              content: spreadsheet(v)
+            })
+          end
+        end
+      end
+
+      private
+
+      def spreadsheet(v)
+        VR.tracer.in_span("mapper.open") do |span|
+          ::Roo::Spreadsheet.open(v[:path]).sheet(0)
         end
       end
     end

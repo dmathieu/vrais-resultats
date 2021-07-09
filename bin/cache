@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+require 'rubygems'
+require 'bundler/setup'
 
 require 'fileutils'
 $LOAD_PATH.unshift File.expand_path("../app", __dir__)
@@ -12,3 +14,5 @@ print "Starting cache save\n"
 ds.each do |entry|
   print "Saved #{entry[:name]}\n"
 end
+
+OpenTelemetry.tracer_provider.shutdown

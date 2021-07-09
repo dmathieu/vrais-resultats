@@ -18,11 +18,13 @@ module VR
         end
 
         def parse_data
-          data = {}
-          @mapper.each_with_index do |file, index|
-            data = parse_file(file, index, data)
+          VR.tracer.in_span("reducer.parse_data") do |span|
+            data = {}
+            @mapper.each_with_index do |file, index|
+              data = parse_file(file, index, data)
+            end
+            data.values
           end
-          data.values
         end
 
         def main_key
@@ -39,25 +41,27 @@ module VR
         end
 
         def parse_file(file, index, data)
-          file[:content].each_with_index do |row, i|
-            next if i <= 3
+          VR.tracer.in_span("reducer.parse_file") do |span|
+            file[:content].each_with_index do |row, i|
+              next if i <= 3
 
-            data[main_key] ||= {
-              breadcrumb: build_breadcrumb(row),
-              resultats: []
-            }
-            l = data[main_key][:resultats][index] || default_hash(row, file[:name])
+              data[main_key] ||= {
+                breadcrumb: build_breadcrumb(row),
+                resultats: []
+              }
+              l = data[main_key][:resultats][index] || default_hash(row, file[:name])
 
-            KEYMAP.each do |k|
-              l[k[:key]] += row[k[:index]]
+              KEYMAP.each do |k|
+                l[k[:key]] += row[k[:index]]
+              end
+
+              l[:candidats] = update_candidats(l[:candidats], row)
+
+              data[main_key][:resultats][index] = l
             end
 
-            l[:candidats] = update_candidats(l[:candidats], row)
-
-            data[main_key][:resultats][index] = l
+            data
           end
-
-          data
         end
 
         def default_hash(entry, name)

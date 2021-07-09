@@ -18,11 +18,13 @@ module VR
         end
 
         def parse_data
-          data = {}
-          @mapper.each_with_index do |file, index|
-            data = parse_file(file, index, data)
+          VR.tracer.in_span("reducer.parse_data") do |span|
+            data = {}
+            @mapper.each_with_index do |file, index|
+              data = parse_file(file, index, data)
+            end
+            data.values
           end
-          data.values
         end
 
         def main_key(row)
@@ -52,29 +54,31 @@ module VR
         end
 
         def parse_file(file, index, data)
-          file[:content].each_with_index do |row, i|
-            next if i < 4
-            next if row.empty?
-            name = row_name(row)
-            next if name == false || name.nil?
+          VR.tracer.in_span("reducer.parse_file") do |span|
+            file[:content].each_with_index do |row, i|
+              next if i < 4
+              next if row.empty?
+              name = row_name(row)
+              next if name == false || name.nil?
 
-            data[main_key(row)] ||= {
-              breadcrumb: build_breadcrumb(row),
-              name: name,
-              resultats: []
-            }
-            l = data[main_key(row)][:resultats][index] || default_hash(row, file[:name])
+              data[main_key(row)] ||= {
+                breadcrumb: build_breadcrumb(row),
+                name: name,
+                resultats: []
+              }
+              l = data[main_key(row)][:resultats][index] || default_hash(row, file[:name])
 
-            KEYMAP.each do |k|
-              l[k[:key]] += row[k[:index]]
+              KEYMAP.each do |k|
+                l[k[:key]] += row[k[:index]]
+              end
+
+              l[:candidats] = update_candidats(l[:candidats], row)
+
+              data[main_key(row)][:resultats][index] = l
             end
 
-            l[:candidats] = update_candidats(l[:candidats], row)
-
-            data[main_key(row)][:resultats][index] = l
+            data
           end
-
-          data
         end
 
         def default_hash(entry, name)
@@ -91,27 +95,29 @@ module VR
         end
 
         def update_candidats(data, entry)
-          entry.drop(20).each_slice(8) do |c|
-            nom = c[2]
-            prenom = c[3]
-            voix = c[5]
-            next if nom.nil? || prenom.nil? || voix.nil?
+          VR.tracer.in_span("reducer.update_candidats") do |span|
+            entry.drop(20).each_slice(8) do |c|
+              nom = c[2]
+              prenom = c[3]
+              voix = c[5]
+              next if nom.nil? || prenom.nil? || voix.nil?
 
-            existing = data.find_index { |s| s[:nom] == nom && s[:prenom] == prenom }
-            if existing
-              data[existing][:voix] += voix
-              next
+              existing = data.find_index { |s| s[:nom] == nom && s[:prenom] == prenom }
+              if existing
+                data[existing][:voix] += voix
+                next
+              end
+
+              data << {
+                nom: nom,
+                prenom: prenom,
+                liste: "",
+                voix: voix
+              }
             end
 
-            data << {
-              nom: nom,
-              prenom: prenom,
-              liste: "",
-              voix: voix
-            }
+            data
           end
-
-          data
         end
       end
     end
