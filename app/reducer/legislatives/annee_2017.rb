@@ -19,7 +19,7 @@ module VR
 
         def parse_data
           data = {}
-          @raw_data.each_with_index do |file, index|
+          @mapper.each_with_index do |file, index|
             data = parse_file(file, index, data)
           end
           data.values

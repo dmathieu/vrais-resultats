@@ -1,6 +1,6 @@
 describe VR::Reducer::Presidentielles::Annee2017 do
-  subject { described_class.new({name: "presidentielles"}, content) }
-  let(:content) { VR::Mapper::Roo.new(config).send(:content) }
+  subject { described_class.new({name: "presidentielles"}, mapper) }
+  let(:mapper) { VR::Mapper::Roo.new(config) }
   let(:config) {
     {
       data: [

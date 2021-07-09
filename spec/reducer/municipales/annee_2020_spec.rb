@@ -1,6 +1,6 @@
 describe VR::Reducer::Municipales::Annee2020 do
-  subject { described_class.new({name: "municipales"}, content) }
-  let(:content) { VR::Mapper::Roo.new(config).send(:content) }
+  subject { described_class.new({name: "municipales"}, mapper) }
+  let(:mapper) { VR::Mapper::Roo.new(config) }
   let(:config) {
     {
       data: [
