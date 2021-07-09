@@ -21,6 +21,13 @@ gem "roo"
 gem "roo-xls"
 gem "activesupport"
 
+gem "opentelemetry-api"
+gem "opentelemetry-sdk"
+gem "opentelemetry-instrumentation-faraday"
+gem "otel-honeycomb-ruby",
+  github: "dmathieu/otel-honeycomb-ruby",
+  branch: "main"
+
 group :development do
   gem "webrick"
   gem "rspec"

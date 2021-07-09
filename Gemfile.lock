@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/dmathieu/otel-honeycomb-ruby.git
+  revision: 7de1a9523d636cea9feb7cc4c809383ecbde0ada
+  branch: main
+  specs:
+    otel-honeycomb-ruby (0.0.1)
+      libhoney (~> 1.18)
+      opentelemetry-api (= 1.0.0.rc2)
+      opentelemetry-sdk (= 1.0.0.rc2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -43,6 +53,9 @@ GEM
     ddmetrics (1.0.1)
     ddplugin (1.0.3)
     diff-lcs (1.4.4)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
+    excon (0.84.0)
     execjs (2.8.1)
     faraday (1.5.0)
       faraday-em_http (~> 1.0)
@@ -64,6 +77,9 @@ GEM
     faraday_middleware (1.0.0)
       faraday (~> 1.0)
     ffi (1.15.3)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
     formatador (0.3.0)
     guard (2.17.0)
       formatador (>= 0.2.4)
@@ -83,10 +99,24 @@ GEM
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
     hashdiff (1.0.1)
+    http (4.4.1)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 2.2)
+      http-parser (~> 1.2.0)
+    http-cookie (1.0.4)
+      domain_name (~> 0.5)
+    http-form_data (2.3.0)
+    http-parser (1.2.3)
+      ffi-compiler (>= 1.0, < 2.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     json (2.5.1)
     json_schema (0.21.0)
+    libhoney (1.18.0)
+      addressable (~> 2.0)
+      excon
+      http (>= 2.0, < 5.0)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -135,8 +165,21 @@ GEM
     notiffany (0.1.3)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    opentelemetry-api (1.0.0.rc2)
+    opentelemetry-common (0.19.0)
+      opentelemetry-api (~> 1.0.0.rc2)
+    opentelemetry-instrumentation-base (0.18.1)
+      opentelemetry-api (~> 1.0.0.rc2)
+    opentelemetry-instrumentation-faraday (0.19.0)
+      opentelemetry-api (~> 1.0.0.rc2)
+      opentelemetry-common (~> 0.19.0)
+      opentelemetry-instrumentation-base (~> 0.18.1)
+    opentelemetry-sdk (1.0.0.rc2)
+      opentelemetry-api (~> 1.0.0.rc2)
+      opentelemetry-common (~> 0.19.0)
+      opentelemetry-instrumentation-base (~> 0.18.1)
     parallel (1.20.1)
-    parser (3.0.1.1)
+    parser (3.0.2.0)
       ast (~> 2.4.1)
     pastel (0.8.0)
       tty-color (~> 0.5)
@@ -147,6 +190,7 @@ GEM
     racc (1.5.2)
     rack (2.2.3)
     rainbow (3.0.0)
+    rake (13.0.6)
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -173,7 +217,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
     rspec-support (3.10.2)
-    rubocop (1.18.2)
+    rubocop (1.18.3)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
@@ -184,13 +228,13 @@ GEM
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.7.0)
       parser (>= 3.0.1.1)
-    rubocop-performance (1.11.3)
+    rubocop-performance (1.11.4)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
     ruby-ole (1.2.12.2)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.4)
-    rubyzip (2.3.1)
+    rubyzip (2.3.2)
     sass (3.4.25)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -198,9 +242,9 @@ GEM
     slow_enumerator_tools (1.1.0)
     spreadsheet (1.2.9)
       ruby-ole
-    standard (1.1.4)
-      rubocop (= 1.18.2)
-      rubocop-performance (= 1.11.3)
+    standard (1.1.5)
+      rubocop (= 1.18.3)
+      rubocop-performance (= 1.11.4)
     thor (1.1.0)
     tty-color (0.6.0)
     tty-command (0.10.1)
@@ -209,6 +253,9 @@ GEM
     tty-which (0.4.2)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.7)
     unicode-display_width (2.0.0)
     w3c_validators (1.3.6)
       json (>= 1.8)
@@ -235,6 +282,10 @@ DEPENDENCIES
   faraday_middleware
   guard-nanoc
   nanoc (~> 4.12.2)
+  opentelemetry-api
+  opentelemetry-instrumentation-faraday
+  opentelemetry-sdk
+  otel-honeycomb-ruby!
   roo
   roo-xls
   rspec
