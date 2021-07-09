@@ -9,8 +9,8 @@ module VR
       municipales: Reducer::Municipales
     }
 
-    def self.new(config, content)
-      const_get(config[:reducer].camelize).new(config, content)
+    def self.new(config, mapper)
+      const_get(config[:reducer].camelize).new(config, mapper)
     end
   end
 end

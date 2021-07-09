@@ -1,9 +1,9 @@
 module VR
   module Reducer
     class Base
-      def initialize(config, data)
+      def initialize(config, mapper)
         @config = config
-        @raw_data = data
+        @mapper = mapper
       end
 
       def content
