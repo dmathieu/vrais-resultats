@@ -10,19 +10,9 @@ module VR
         raw_data.each do |v|
           block.call({
             name: v[:name],
-            content: parse_file(::Roo::Spreadsheet.open(v[:path]))
+            content: ::Roo::Spreadsheet.open(v[:path]).sheet(0).lazy
           })
         end
-      end
-
-      private
-
-      def parse_file(content)
-        entries = []
-        content.sheet(0).each do |row|
-          entries << row
-        end
-        entries
       end
     end
   end
