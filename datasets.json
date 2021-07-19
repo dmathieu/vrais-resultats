@@ -13,8 +13,7 @@
 			}
 		],
 		"reducer": "municipales",
-		"annee": 2020,
-		"slug": "municipales-2020"
+		"annee": 2020
 	},
 	{
 		"name": "Européennes 2019",
@@ -26,8 +25,7 @@
 			}
 		],
 		"reducer": "europeennes",
-		"annee": 2019,
-		"slug": "europeennes-2019"
+		"annee": 2019
 	},
 	{
 		"name": "Législatives 2017",
@@ -43,8 +41,7 @@
 			}
 		],
 		"reducer": "legislatives",
-		"annee": 2017,
-		"slug": "legislatives-2017"
+		"annee": 2017
 	},
 	{
 		"name": "Présidentielles 2017",
@@ -60,7 +57,6 @@
 			}
 		],
 		"reducer": "presidentielles",
-		"annee": 2017,
-		"slug": "presidentielles-2017"
+		"annee": 2017
 	}
 ]

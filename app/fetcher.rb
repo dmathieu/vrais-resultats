@@ -27,7 +27,7 @@ module VR
     private
 
     def cache_path(name)
-      File.join(@@path_dir, "cache", "fetcher", "#{@config[:slug]}.#{name}.#{@config[:format]}")
+      File.join(@@path_dir, "cache", "fetcher", "#{@config[:reducer]}-#{@config[:annee]}.#{name}.#{@config[:format]}")
     end
 
     def download(url)

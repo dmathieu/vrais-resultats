@@ -13,7 +13,6 @@ describe VR::Reducer::Municipales::Annee2020 do
           url: "https://example.com/tour-2"
         }
       ],
-      slug: "test",
       format: "xlsx"
     }
   }

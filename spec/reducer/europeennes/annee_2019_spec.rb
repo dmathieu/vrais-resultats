@@ -9,7 +9,6 @@ describe VR::Reducer::Europeennes::Annee2019 do
           url: "https://example.com/resultats"
         }
       ],
-      slug: "test",
       format: "xls"
     }
   }

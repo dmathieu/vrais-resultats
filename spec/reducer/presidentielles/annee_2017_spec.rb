@@ -13,7 +13,6 @@ describe VR::Reducer::Presidentielles::Annee2017 do
           url: "https://example.com/tour-2"
         }
       ],
-      slug: "test",
       format: "xls"
     }
   }

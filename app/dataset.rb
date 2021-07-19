@@ -40,7 +40,7 @@ module VR
     end
 
     def cache_path(config)
-      File.join(@@path_dir, "cache", "dataset", "#{config[:slug]}.json")
+      File.join(@@path_dir, "cache", "dataset", "#{config[:reducer]}-#{config[:annee]}.json")
     end
   end
 end
