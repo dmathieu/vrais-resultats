@@ -1,7 +1,6 @@
 describe VR::Fetcher do
   let(:config) {
     {
-      slug: "test-fetcher",
       format: "txt",
       data: [
         {

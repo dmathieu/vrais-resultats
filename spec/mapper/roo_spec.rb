@@ -1,5 +1,5 @@
 describe VR::Mapper::Roo do
-  subject { described_class.new({url: url, slug: "test"}) }
+  subject { described_class.new({url: url}) }
   let(:url) { "https://example.com" }
 
   describe "with xlsx data" do

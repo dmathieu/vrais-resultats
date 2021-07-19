@@ -13,7 +13,6 @@ describe VR::Reducer::Legislatives::Annee2017 do
           url: "https://example.com/tour-2"
         }
       ],
-      slug: "test",
       format: "xlsx"
     }
   }

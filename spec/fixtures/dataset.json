@@ -9,8 +9,7 @@
 			}
 		],
 		"reducer": "municipales",
-		"annee": 2020,
-		"slug": "election-1"
+		"annee": 2020
 	},
 	{
 		"name": "Election in XLS",
@@ -22,7 +21,6 @@
 			}
 		],
 		"reducer": "presidentielles",
-		"annee": 2017,
-		"slug": "election-2"
+		"annee": 2017
 	}
 ]
