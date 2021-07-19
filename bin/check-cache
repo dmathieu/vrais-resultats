@@ -2,13 +2,7 @@
 
 cachePath=cache/
 
-if ! git diff --quiet --exit-code origin/main...HEAD $cachePath &> /dev/null; then
-	echo "Cache isn't clean before updating it"
-	git status
-	exit 1
-fi
-
-rm -rf cache
+git diff origin/main --name-status $cachePath | cut -f2 | xargs -r rm
 bin/cache
 
 if ! git diff --quiet --exit-code origin/main...HEAD $cachePath &> /dev/null; then
