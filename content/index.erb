@@ -7,13 +7,31 @@
   l'intérieur sur <a href="https://www.data.gouv.fr">data.gouv.fr</a>.</p>
 </div>
 
-<div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
-  <div class="col-md-12 px-0">
-    <h1 class="display-4 fst-italic">Elections les plus récentes</h1>
+<div class="row mb-2">
+  <div class="col-md-12">
+    <input id="sq" type="search" class="form-control" placeholder="Chercher une élection">
   </div>
 </div>
 
-<div class="row mb-2">
+<div class="search d-none">
+  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+    <div class="col-md-12 px-0">
+      <h1 class="display-4 fst-italic">Recherche</h1>
+    </div>
+  </div>
+
+  <div class="row mb-2 results">
+
+  </div>
+</div>
+
+<div class="no-search">
+  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+    <div class="col-md-12 px-0">
+      <h1 class="display-4 fst-italic">Elections les plus récentes</h1>
+    </div>
+  </div>
+
   <div class="row mb-2">
     <% dataset.each do |election| %>
       <div class="col-md-6">
