@@ -1,4 +1,5 @@
 require "reducer/base"
+require "reducer/departementales"
 require "reducer/europeennes"
 require "reducer/legislatives"
 require "reducer/municipales"
