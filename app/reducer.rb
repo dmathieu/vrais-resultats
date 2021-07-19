@@ -4,6 +4,7 @@ require "reducer/europeennes"
 require "reducer/legislatives"
 require "reducer/municipales"
 require "reducer/presidentielles"
+require "reducer/regionales"
 
 module VR
   module Reducer

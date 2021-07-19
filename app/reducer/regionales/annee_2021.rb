@@ -1,7 +1,7 @@
 module VR
   module Reducer
-    module Europeennes
-      class Annee2019 < Base
+    module Regionales
+      class Annee2021 < Base
         KEYMAP = [
           {key: :inscrits, index: 2, default: 0},
           {key: :abstentions, index: 3, default: 0},
@@ -52,7 +52,7 @@ module VR
           VR.tracer.in_span("reducer.parse_file") do |span|
             file[:content].each_with_index do |row, i|
               next if i < 1
-              next if row.empty?
+              next if row.compact.empty?
               name = row_name(row)
               next if name == false || name.nil?
 
@@ -91,12 +91,13 @@ module VR
 
         def update_candidats(data, entry)
           VR.tracer.in_span("reducer.update_candidats") do |span|
-            entry.drop(16).each_slice(7) do |c|
-              nom_prenom = c[3].split(" ")
+            entry.drop(16).each_slice(9) do |c|
+              next if c.compact.empty?
+              nom_prenom = c[4].split(" ")
               nom = nom_prenom[0]
               prenom = nom_prenom[1]
-              liste = c[2]
-              voix = c[4]
+              liste = c[3]
+              voix = c[5]
               next if nom.nil? || prenom.nil? || voix.nil?
 
               existing = data.find_index { |s| s[:nom] == nom && s[:prenom] == prenom }
