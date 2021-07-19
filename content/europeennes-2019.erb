@@ -1,0 +1,19 @@
+<div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+  <div class="col-md-12 px-0">
+    <h1 class="display-4 fst-italic">Elections Européennes 2019</h1>
+  </div>
+</div>
+
+<div class="row mb-2">
+  <% children_of(@item).each do |page| %>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <a href="<%= page.path %>" class="stretched-link">
+            <h3 class="mb-0"><%= page[:name] %></h3>
+          </a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -17,6 +17,19 @@
 		"slug": "municipales-2020"
 	},
 	{
+		"name": "Européennes 2019",
+		"format": "xls",
+		"data": [
+			{
+				"name": "Résultats",
+				"url": "https://www.data.gouv.fr/fr/datasets/r/4a26fcae-494b-4ef6-82bb-49fdd32c8159"
+			}
+		],
+		"reducer": "europeennes",
+		"annee": 2019,
+		"slug": "europeennes-2019"
+	},
+	{
 		"name": "Législatives 2017",
 		"format": "xlsx",
 		"data": [
