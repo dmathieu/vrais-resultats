@@ -3,6 +3,14 @@
 	<title><%= page_title(@item) %></title>
 	<link rel="stylesheet" href="/assets/stylesheets/application.css">
 
+	<meta name="description" content="<%= page_description(@item) %>" />
+
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="<%= page_title(@item) %>" />
+	<meta property="og:description" content="<%= page_description(@item) %>" />
+	<meta property="og:url" content="<%= url_for(@item) %>" />
+	<meta property="og:site_name" content="Vrais résultats des élections Fran&ccedil;aises" />
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" href="/assets/stylesheets/application.css">
