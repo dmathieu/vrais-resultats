@@ -16,7 +16,12 @@ module Generation
         bread = []
         v[:breadcrumb].each do |b|
           bread << b
-          create_breadcrumb_page(@items, b.merge(breadcrumb: bread.dup)) unless b[:current]
+          unless b[:current]
+            create_breadcrumb_page(
+              @items,
+              b.merge(election: election[:name], breadcrumb: bread.dup)
+            )
+          end
         end
         path = v[:breadcrumb].last[:path]
         v[:election] = election[:name]
