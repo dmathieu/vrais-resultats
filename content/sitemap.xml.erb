@@ -1,1 +1,6 @@
-<%= xml_sitemap(items: items) %>
+<%= xml_sitemap(items: items.select do |i|
+  !i.path.end_with?('.js') &&
+    !i.path.end_with?('.css') &&
+    !i.path.end_with?('.xml') &&
+    !i.path.end_with?('.json')
+end) %>
