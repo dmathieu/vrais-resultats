@@ -16,7 +16,7 @@ end
 compile "/**/*.scss" do
   filter :sass, Compass.sass_engine_options
 end
-compile "/**/*.{js,json}.erb" do
+compile "/**/*.{js,json,xml}.erb" do
   filter :erb
 end
 compile "/**/*.erb" do
@@ -31,7 +31,7 @@ end
 # Routes
 #
 
-route "/**/*.{js,json}.*" do
+route "/**/*.{js,json,xml}.*" do
   item.identifier.without_ext
 end
 
