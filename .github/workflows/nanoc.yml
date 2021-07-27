@@ -1,4 +1,4 @@
-name: Tests
+name: Nanoc
 on: [push, pull_request]
 jobs:
   test:
@@ -9,6 +9,5 @@ jobs:
         with:
           ruby-version: 3.0
           bundler-cache: true
-      - run: VR_DATABASE_ENV=test bundle exec rake db:schema:load
-      - run: bundle exec standardrb
-      - run: bundle exec rspec spec
+      - run: bundle exec nanoc compile
+      - run: bundle exec nanoc check ilinks elinks stale mixed_content
