@@ -20,6 +20,8 @@ gem "faraday_middleware"
 gem "roo"
 gem "roo-xls"
 gem "activesupport"
+gem "activerecord"
+gem "sqlite3"
 
 gem "opentelemetry-api"
 gem "opentelemetry-sdk"
