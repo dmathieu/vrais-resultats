@@ -3,3 +3,9 @@ production:
   database: cache/database.sqlite
   pool: 5
   timeout: 5000
+
+test:
+  adapter: sqlite3
+  database: cache/database.test.sqlite
+  pool: 5
+  timeout: 5000
