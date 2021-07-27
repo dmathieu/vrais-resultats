@@ -1,6 +1,8 @@
 require "active_support"
 require "active_support/core_ext"
-require "otel"
+
+root = File.dirname(File.absolute_path(__FILE__))
+Dir.glob(File.join(root, "initializers/*.rb")) { |file| require file }
 
 module VR
   def self.env
