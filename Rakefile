@@ -7,7 +7,7 @@ module Rails
   end
 
   def self.env
-    "production"
+    VR.database_env
   end
 end
 

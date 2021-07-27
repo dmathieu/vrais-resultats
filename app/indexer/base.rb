@@ -6,7 +6,25 @@ module VR
         @mapper = mapper
       end
 
+      def run
+        VR.tracer.in_span("index.run") do |span|
+          @mapper.each do |m|
+            run_mapper(m)
+          end
+        end
+      end
+
       private
+
+      def self.set_keymap(map)
+        @@keymap = map
+      end
+
+      def run_mapper(m)
+        VR.tracer.in_span("indexer.run_mapper") do |span|
+          event
+        end
+      end
 
       def event
         @event ||= Event.find_or_create_by!(name: @config[:name])
