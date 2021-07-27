@@ -52,6 +52,10 @@ GEM
     crack (0.4.5)
       rexml
     cri (2.15.11)
+    database_cleaner-active_record (2.0.1)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
     ddmemoize (1.0.0)
       ddmetrics (~> 1.0)
       ref (~> 2.0)
@@ -286,6 +290,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.4.1)
   builder
   compass (~> 1.0.3)
+  database_cleaner-active_record
   faraday
   faraday_middleware
   guard-nanoc
