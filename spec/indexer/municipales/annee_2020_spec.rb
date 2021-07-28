@@ -30,6 +30,16 @@ describe VR::Indexer::Municipales::Annee2020 do
       expect do
         subject.run
       end.to change(Event, :count).by(1)
+
+      event = Event.last
+      expect(event).to be_populated
+    end
+
+    it "does not insert a new event" do
+      subject.run
+      expect do
+        subject.run
+      end.to change(Event, :count).by(0)
     end
 
     it "inserts the rounds" do

@@ -7,28 +7,48 @@ module VR
       end
 
       def run
+        return if event.populated?
+
         VR.tracer.in_span("index.run") do |span|
+          event.areas.delete_all
+          event.rounds.delete_all
+
           @mapper.each do |m|
             run_mapper(m)
           end
         end
+
+        event.update!(populated: true)
+      end
+
+      class << self
+        private
+
+        @@skip = 0
+        @@valid_row = nil
+        @@keymap = {}
+
+        def skip(i)
+          @@skip = i
+        end
+
+        def keymap(map)
+          @@keymap = map
+        end
+
+        def valid_row?(method)
+          @@valid_row = method
+        end
       end
 
       private
-
-      def self.set_skip(i)
-        @@skip = i
-      end
-
-      def self.set_keymap(map)
-        @@keymap = map
-      end
 
       def run_mapper(m)
         VR.tracer.in_span("indexer.run_mapper") do |span|
           round = event.rounds.find_or_create_by!(name: m[:name])
           m[:content].each_with_index do |row, i|
             next if i < @@skip
+            next unless @@valid_row.nil? || @@valid_row.call(row)
             run_row(round, parse_row(row))
           end
         end
@@ -47,7 +67,7 @@ module VR
       end
 
       def parse_row(row)
-        @@keymap.map do |k,v|
+        @@keymap.map do |k, v|
           value = nil
           case v
           when Hash
@@ -61,7 +81,7 @@ module VR
       end
 
       def event
-        @event ||= Event.find_or_create_by!(name: @config[:name])
+        @event ||= Event.find_or_create_by!(name: @config[:name], annee: @config[:annee])
       end
     end
   end
