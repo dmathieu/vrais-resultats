@@ -45,25 +45,40 @@ module VR
 
       def run_mapper(m)
         VR.tracer.in_span("indexer.run_mapper") do |span|
-          round = event.rounds.find_or_create_by!(name: m[:name])
-          m[:content].each_with_index do |row, i|
-            next if i < @@skip
-            next unless @@valid_row.nil? || @@valid_row.call(row)
-            run_row(round, parse_row(row))
+          ActiveRecord::Base.transaction do
+            round = event.rounds.find_or_create_by!(name: m[:name])
+            m[:content].each_with_index do |row, i|
+              next if i < @@skip
+              next unless @@valid_row.nil? || @@valid_row.call(row)
+              run_row(round, parse_row(row))
+            end
+            @results.values.map(&:save!)
           end
+
+          @areas = {}
+          @results = {}
         end
       end
 
       def run_row(round, row)
-        area = event.areas.find_or_create_by!(name: row[:area_name], path: row[:area_path])
-        area.results.find_or_initialize_by(round_id: round.id).tap do |r|
+        results_for(round, area_for(row)).tap do |r|
           r.inscrits += row[:inscrits]
           r.abstentions += row[:abstentions]
           r.votants += row[:votants]
           r.blancs += row[:blancs]
           r.nuls += row[:nuls]
           r.exprimes += row[:exprimes]
-        end.save!
+        end
+      end
+
+      def area_for(row)
+        @areas ||= {}
+        @areas[row[:area_path]] ||= event.areas.find_or_create_by!(name: row[:area_name], path: row[:area_path])
+      end
+
+      def results_for(round, area)
+        @results ||= {}
+        @results[round.id.to_s + "-" + area.id.to_s] = area.results.find_or_initialize_by(round_id: round.id)
       end
 
       def parse_row(row)
