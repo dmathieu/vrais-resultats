@@ -37,5 +37,11 @@ describe VR::Indexer::Municipales::Annee2020 do
         subject.run
       end.to change(Round, :count).by(2)
     end
+
+    it "inserts the areas" do
+      expect do
+        subject.run
+      end.to change(Area, :count).by(15)
+    end
   end
 end
