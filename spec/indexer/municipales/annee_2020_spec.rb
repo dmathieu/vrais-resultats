@@ -31,5 +31,11 @@ describe VR::Indexer::Municipales::Annee2020 do
         subject.run
       end.to change(Event, :count).by(1)
     end
+
+    it "inserts the rounds" do
+      expect do
+        subject.run
+      end.to change(Round, :count).by(2)
+    end
   end
 end

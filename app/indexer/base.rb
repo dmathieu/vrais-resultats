@@ -22,8 +22,15 @@ module VR
 
       def run_mapper(m)
         VR.tracer.in_span("indexer.run_mapper") do |span|
-          event
+          round = event.rounds.find_or_create_by!(name: m[:name])
+          m[:content].each do |row|
+            run_row(round, row)
+          end
         end
+      end
+
+      def run_row(round, row)
+        nil
       end
 
       def event
