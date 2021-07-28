@@ -27,6 +27,8 @@ module VR
         @@skip = 0
         @@valid_row = nil
         @@keymap = {}
+        @candidats_keymap = nil
+        @candidats_splitter = nil
 
         def skip(i)
           @@skip = i
@@ -36,8 +38,16 @@ module VR
           @@keymap = map
         end
 
+        def candidats_keymap(map)
+          @@candidats_keymap = map
+        end
+
         def valid_row?(method)
           @@valid_row = method
+        end
+
+        def candidats_splitter(method)
+          @@candidats_splitter = method
         end
       end
 
@@ -92,7 +102,25 @@ module VR
           end
 
           [k, value]
-        end.to_h
+        end.to_h.merge({
+          candidats: parse_candidats(@@candidats_splitter.call(row))
+        })
+      end
+
+      def parse_candidats(can)
+        can.map do |c|
+          @@candidats_keymap.map do |k, v|
+            value = nil
+            case v
+            when Hash
+              value = c[v[:index]]
+            when Proc
+              value = v.call(c)
+            end
+
+            [k, value]
+          end.to_h
+        end
       end
 
       def event
