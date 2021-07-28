@@ -36,6 +36,14 @@ module VR
 
       def run_row(round, row)
         area = event.areas.find_or_create_by!(name: row[:area_name], path: row[:area_path])
+        area.results.find_or_initialize_by(round_id: round.id).tap do |r|
+          r.inscrits += row[:inscrits]
+          r.abstentions += row[:abstentions]
+          r.votants += row[:votants]
+          r.blancs += row[:blancs]
+          r.nuls += row[:nuls]
+          r.exprimes += row[:exprimes]
+        end.save!
       end
 
       def parse_row(row)

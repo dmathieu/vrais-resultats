@@ -43,5 +43,11 @@ describe VR::Indexer::Municipales::Annee2020 do
         subject.run
       end.to change(Area, :count).by(15)
     end
+
+    it "inserts the results" do
+      expect do
+        subject.run
+      end.to change(Result, :count).by(15)
+    end
   end
 end
