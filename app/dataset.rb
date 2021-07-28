@@ -13,27 +13,17 @@ module VR
       @path = path
     end
 
-    def config
-      @config ||= JSON.parse(fetch.read).map(&:deep_symbolize_keys)
-    end
-
     def each(&block)
       config.each do |c|
-        VR.tracer.in_span("dataset.#{c[:name].parameterize}") do |span|
-          mapper = VR::Mapper.new(c)
-          path = cache_path(c)
-
-          unless File.exist?(path)
-            r = VR::Reducer.new(c, mapper)
-            File.write(path, r.content.to_json)
-          end
-
-          block.call(JSON.parse(File.read(path)).deep_symbolize_keys)
-        end
+        block.call(c)
       end
     end
 
     private
+
+    def config
+      @config ||= JSON.parse(fetch.read).map(&:deep_symbolize_keys)
+    end
 
     def fetch
       @data = File.open(File.expand_path(@path))

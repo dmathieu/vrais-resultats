@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 4) do
     t.integer "event_id"
     t.string "name", null: false
     t.string "path", null: false
-    t.index ["name", "event_id"], name: "index_areas_on_name_and_event_id", unique: true
     t.index ["path", "event_id"], name: "index_areas_on_path_and_event_id", unique: true
   end
 
   create_table "events", force: :cascade do |t|
     t.string "name", null: false
     t.integer "annee"
+    t.boolean "populated"
     t.index ["name"], name: "index_events_on_name", unique: true
   end
 

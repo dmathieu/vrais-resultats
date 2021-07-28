@@ -4,9 +4,9 @@ class Result < ActiveRecord::Base
 
   validates :area_id,
     presence: true,
-    uniqueness: { scope: :round_id }
+    uniqueness: {scope: :round_id}
 
   validates :round_id,
     presence: true,
-    uniqueness: { scope: :area_id }
+    uniqueness: {scope: :area_id}
 end
