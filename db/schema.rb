@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 3) do
+ActiveRecord::Schema.define(version: 4) do
 
   create_table "areas", force: :cascade do |t|
     t.integer "event_id"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 3) do
     t.string "name", null: false
     t.integer "annee"
     t.index ["name"], name: "index_events_on_name", unique: true
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.integer "area_id"
+    t.integer "round_id"
+    t.integer "inscrits", default: 0
+    t.integer "abstentions", default: 0
+    t.integer "votants", default: 0
+    t.integer "blancs", default: 0
+    t.integer "nuls", default: 0
+    t.integer "exprimes", default: 0
+    t.index ["area_id", "round_id"], name: "index_results_on_area_id_and_round_id", unique: true
   end
 
   create_table "rounds", force: :cascade do |t|

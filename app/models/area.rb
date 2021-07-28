@@ -1,5 +1,6 @@
 class Area < ActiveRecord::Base
   belongs_to :event
+  has_many :results
 
   validates :name,
     presence: true,
