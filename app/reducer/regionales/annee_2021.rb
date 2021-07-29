@@ -35,19 +35,6 @@ module VR
           row[1]
         end
 
-        def build_breadcrumb(row)
-          [
-            {
-              name: @config[:name],
-              path: "/" + @config[:name].parameterize
-            },
-            {
-              name: row[1],
-              path: "/" + @config[:name].parameterize + "/" + row[1].parameterize
-            }
-          ]
-        end
-
         def parse_file(file, index, data)
           VR.tracer.in_span("reducer.parse_file") do |span|
             file[:content].each_with_index do |row, i|
@@ -57,8 +44,8 @@ module VR
               next if name == false || name.nil?
 
               data[main_key(row)] ||= {
-                breadcrumb: build_breadcrumb(row),
                 name: name,
+                path: row[1].parameterize,
                 resultats: []
               }
               l = data[main_key(row)][:resultats][index] || default_hash(row, file[:name])
@@ -93,14 +80,12 @@ module VR
           VR.tracer.in_span("reducer.update_candidats") do |span|
             entry.drop(16).each_slice(9) do |c|
               next if c.compact.empty?
-              nom_prenom = c[4].split(" ")
-              nom = nom_prenom[0]
-              prenom = nom_prenom[1]
+              nom = c[4]
               liste = c[3]
               voix = c[5]
-              next if nom.nil? || prenom.nil? || voix.nil?
+              next if nom.nil? || voix.nil?
 
-              existing = data.find_index { |s| s[:nom] == nom && s[:prenom] == prenom }
+              existing = data.find_index { |s| s[:nom] == nom }
               if existing
                 data[existing][:voix] += voix
                 next
@@ -108,7 +93,6 @@ module VR
 
               data << {
                 nom: nom,
-                prenom: prenom,
                 liste: liste,
                 voix: voix
               }

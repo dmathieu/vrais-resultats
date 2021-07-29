@@ -35,24 +35,6 @@ module VR
           "#{row[3]} #{row[1]}"
         end
 
-        def build_breadcrumb(row)
-          [
-            {
-              name: @config[:name],
-              path: "/" + @config[:name].parameterize
-            },
-            {
-              name: row[1],
-              path: "/" + @config[:name].parameterize + "/" + row[1].parameterize,
-              type: :departement
-            },
-            {
-              name: row_name(row),
-              path: "/" + @config[:name].parameterize + "/" + row[1].parameterize + "/" + row[2].to_s
-            }
-          ]
-        end
-
         def parse_file(file, index, data)
           VR.tracer.in_span("reducer.parse_file") do |span|
             file[:content].each_with_index do |row, i|
@@ -62,8 +44,8 @@ module VR
               next if name == false || name.nil?
 
               data[main_key(row)] ||= {
-                breadcrumb: build_breadcrumb(row),
                 name: name,
+                path: row[1].parameterize + "/" + row[2].to_s,
                 resultats: []
               }
               l = data[main_key(row)][:resultats][index] || default_hash(row, file[:name])
@@ -97,12 +79,11 @@ module VR
         def update_candidats(data, entry)
           VR.tracer.in_span("reducer.update_candidats") do |span|
             entry.drop(20).each_slice(8) do |c|
-              nom = c[2]
-              prenom = c[3]
+              nom = [c[2], c[3]].compact.join(" ")
               voix = c[5]
-              next if nom.nil? || prenom.nil? || voix.nil?
+              next if nom.nil? || voix.nil?
 
-              existing = data.find_index { |s| s[:nom] == nom && s[:prenom] == prenom }
+              existing = data.find_index { |s| s[:nom] == nom }
               if existing
                 data[existing][:voix] += voix
                 next
@@ -110,7 +91,6 @@ module VR
 
               data << {
                 nom: nom,
-                prenom: prenom,
                 liste: "",
                 voix: voix
               }

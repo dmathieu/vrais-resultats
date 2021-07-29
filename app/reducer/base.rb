@@ -9,6 +9,7 @@ module VR
       def content
         @content ||= {
           name: @config[:name],
+          annee: @config[:annee],
           data: data
         }
       end

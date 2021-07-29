@@ -34,24 +34,6 @@ module VR
           row[1].parameterize + "/" + row[NAMEKEY].parameterize
         end
 
-        def build_breadcrumb(row)
-          [
-            {
-              name: @config[:name],
-              path: "/" + @config[:name].parameterize
-            },
-            {
-              name: row[1],
-              path: "/" + @config[:name].parameterize + "/" + row[1].parameterize,
-              type: :departement
-            },
-            {
-              name: row[NAMEKEY],
-              path: "/" + @config[:name].parameterize + "/" + row[1].parameterize + "/" + row[NAMEKEY].parameterize
-            }
-          ]
-        end
-
         def parse_file(file, index, data)
           VR.tracer.in_span("reducer.parse_file") do |span|
             file[:content].each_with_index do |row, i|
@@ -60,7 +42,7 @@ module VR
               next if row.empty?
 
               data[main_key(row)] ||= {
-                breadcrumb: build_breadcrumb(row),
+                path: row[1].parameterize + "/" + row[NAMEKEY].parameterize,
                 name: row[NAMEKEY],
                 resultats: []
               }
@@ -109,8 +91,7 @@ module VR
             candidats[current] << data.last
 
             candidats.each do |c|
-              nom = c[3] || ""
-              prenom = c[4] || ""
+              nom = [c[3], c[4]].compact.join(" ")
               liste = c[5] || ""
               while c[6].is_a?(String)
                 liste += " " + c[6]
@@ -118,7 +99,7 @@ module VR
               end
               voix = c[6]
 
-              existing = data.find_index { |s| s[:nom] == nom && s[:prenom] == prenom }
+              existing = data.find_index { |s| s[:nom] == nom }
               if existing
                 data[existing][:voix] += voix
                 next
@@ -126,7 +107,6 @@ module VR
 
               data << {
                 nom: nom,
-                prenom: prenom,
                 liste: liste,
                 voix: voix
               }

@@ -2,3 +2,4 @@ crash.log
 output/
 tmp/
 .sass-cache
+cache/database.test.sqlite

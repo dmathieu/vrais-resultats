@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'bundler/setup'
+
+require 'fileutils'
+
+$LOAD_PATH.unshift File.expand_path("../app", __dir__)
+require "vr"
+
+FileUtils.mkdir_p "cache/fetcher"
+ds = VR::Dataset.new("datasets.json")
+
+print "Starting index\n"
+ds.each do |content|
+  begin
+    indexer = VR::Indexer.new(content)
+
+    indexer.run
+    print "Indexed #{content[:name]}\n"
+  rescue NameError => e
+    print "Ignoring #{content[:name]} - #{e}\n"
+  end
+end
+
+OpenTelemetry.tracer_provider.shutdown

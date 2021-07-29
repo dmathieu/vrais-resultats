@@ -6,8 +6,8 @@ module Main
   def page_title(item)
     elements = []
 
-    elements << @item[:name] if @item.key?(:name)
-    elements << @item[:election] if @item.key?(:election)
+    elements << @item[:name] unless @item[:name].blank?
+    elements << @item[:election] unless @item[:election].blank?
     elements << "Vrais Résultats"
     elements.join(" - ")
   end
@@ -30,6 +30,7 @@ module Main
 end
 
 include Nanoc::Helpers::Blogging
+include Nanoc::Helpers::Breadcrumbs
 include Nanoc::Helpers::Rendering
 include Nanoc::Helpers::ChildParent
 include Nanoc::Helpers::XMLSitemap

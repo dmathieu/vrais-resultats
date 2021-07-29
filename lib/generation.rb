@@ -14,27 +14,35 @@ module Generation
 
       data.each do |v|
         bread = []
-        v[:breadcrumb].each do |b|
+        v[:path].split("/").each do |b|
           bread << b
-          unless b[:current]
-            create_breadcrumb_page(
+          unless bread.join("/") == v[:path]
+            create_list_page(
               @items,
-              b.merge(election: election[:name], breadcrumb: bread.dup)
+              {
+                election: election[:name],
+                name: bread.last.capitalize,
+                path: bread.join("/")
+              }
             )
           end
         end
-        path = v[:breadcrumb].last[:path]
         v[:election] = election[:name]
-        @items.create(content, v, "#{path}.erb")
+
+        path = "/" + election[:name].parameterize
+        path << "/" + v[:path] unless v[:path].blank?
+        path << ".erb"
+
+        @items.create(content, v, path)
       end
     end
   end
 
-  def create_breadcrumb_page(items, info)
-    return if info[:type].nil?
-    return unless items["#{info[:path]}.erb"].nil?
-    content = File.read(File.expand_path("layouts/templates/#{info[:type]}.erb"))
-    items.create(content, info, "#{info[:path]}.erb")
+  def create_list_page(items, info)
+    path = "/#{info[:election].parameterize}/#{info[:path]}.erb"
+    return unless items[path].nil?
+    content = File.read(File.expand_path("layouts/templates/list.erb"))
+    items.create(content, info, path)
   end
 end
 

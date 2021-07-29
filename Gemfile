@@ -20,6 +20,8 @@ gem "faraday_middleware"
 gem "roo"
 gem "roo-xls"
 gem "activesupport"
+gem "activerecord"
+gem "sqlite3"
 
 gem "opentelemetry-api"
 gem "opentelemetry-sdk"
@@ -33,4 +35,8 @@ group :development do
   gem "rspec"
   gem "webmock"
   gem "standard"
+end
+
+group :test do
+  gem "database_cleaner-active_record"
 end
