@@ -38,6 +38,15 @@ module VR
             nuls: resultat[:nuls],
             exprimes: resultat[:exprimes]
           )
+
+          resultat[:candidats].each do |candidat|
+            round.candidats.create!(
+              area_id: area.id,
+              nom: candidat[:nom],
+              liste: candidat[:liste],
+              voix: candidat[:voix]
+            )
+          end
         end
       end
     end

@@ -91,8 +91,7 @@ module VR
             candidats[current] << data.last
 
             candidats.each do |c|
-              nom = c[3] || ""
-              prenom = c[4] || ""
+              nom = [c[3], c[4]].compact.join(" ")
               liste = c[5] || ""
               while c[6].is_a?(String)
                 liste += " " + c[6]
@@ -100,7 +99,7 @@ module VR
               end
               voix = c[6]
 
-              existing = data.find_index { |s| s[:nom] == nom && s[:prenom] == prenom }
+              existing = data.find_index { |s| s[:nom] == nom }
               if existing
                 data[existing][:voix] += voix
                 next
@@ -108,7 +107,6 @@ module VR
 
               data << {
                 nom: nom,
-                prenom: prenom,
                 liste: liste,
                 voix: voix
               }

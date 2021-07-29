@@ -34,5 +34,11 @@ describe VR::Indexer do
         subject.run
       end.to change(Result, :count).by(34)
     end
+
+    it "inserts the candidats" do
+      expect do
+        subject.run
+      end.to change(Candidat, :count).by(214)
+    end
   end
 end

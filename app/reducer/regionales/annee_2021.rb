@@ -80,14 +80,12 @@ module VR
           VR.tracer.in_span("reducer.update_candidats") do |span|
             entry.drop(16).each_slice(9) do |c|
               next if c.compact.empty?
-              nom_prenom = c[4].split(" ")
-              nom = nom_prenom[0]
-              prenom = nom_prenom[1]
+              nom = c[4]
               liste = c[3]
               voix = c[5]
-              next if nom.nil? || prenom.nil? || voix.nil?
+              next if nom.nil? || voix.nil?
 
-              existing = data.find_index { |s| s[:nom] == nom && s[:prenom] == prenom }
+              existing = data.find_index { |s| s[:nom] == nom }
               if existing
                 data[existing][:voix] += voix
                 next
@@ -95,7 +93,6 @@ module VR
 
               data << {
                 nom: nom,
-                prenom: prenom,
                 liste: liste,
                 voix: voix
               }
