@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 4) do
+ActiveRecord::Schema.define(version: 5) do
 
   create_table "areas", force: :cascade do |t|
     t.integer "event_id"
     t.string "name", null: false
     t.string "path", null: false
     t.index ["path", "event_id"], name: "index_areas_on_path_and_event_id", unique: true
+  end
+
+  create_table "candidats", force: :cascade do |t|
+    t.integer "area_id"
+    t.integer "round_id"
+    t.string "nom"
+    t.string "liste"
+    t.integer "voix", default: 0
+    t.index ["nom", "area_id", "round_id"], name: "index_candidats_on_nom_and_area_id_and_round_id", unique: true
   end
 
   create_table "events", force: :cascade do |t|
