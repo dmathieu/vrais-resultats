@@ -16,7 +16,7 @@ describe VR::Dataset do
 
   it "loads the config" do
     d = described_class.new("spec/fixtures/dataset.json")
-    expect(d.config).not_to be_empty
+    expect(d.send(:config)).not_to be_empty
   end
 
   it "can loop through all entries" do

@@ -1,0 +1,13 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <% breadcrumbs_trail.compact.each do |i| %>
+      <li class="breadcrumb-item <%= is_current?(i.path) ? "active" : "" %>">
+        <% if is_current?(i.path) %>
+          <%= i[:name].blank? ? i[:election] : i[:name] %>
+        <% else %>
+          <a href="<%= i.path %>"><%= i[:name] %></a>
+        <% end %>
+      </li>
+    <% end %>
+  </ol>
+</nav>

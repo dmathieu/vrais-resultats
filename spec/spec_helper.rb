@@ -1,8 +1,13 @@
+ENV["VR_DATABASE_ENV"] = "test"
 $LOAD_PATH.unshift File.expand_path("../app", __dir__)
 require "vr"
 
 require "webmock/rspec"
 WebMock.disable_net_connect!
+
+require "database_cleaner/active_record"
+
+`VR_DATABASE_ENV=test bundle exec rake db:schema:load`
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -14,6 +19,17 @@ RSpec.configure do |config|
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
 
   config.around :each do |s|
     Dir.mktmpdir do |dir|

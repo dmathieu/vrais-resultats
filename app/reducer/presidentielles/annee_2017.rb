@@ -31,22 +31,14 @@ module VR
           "national"
         end
 
-        def build_breadcrumb(row)
-          [
-            {
-              name: @config[:name],
-              path: "/" + @config[:name].parameterize
-            }
-          ]
-        end
-
         def parse_file(file, index, data)
           VR.tracer.in_span("reducer.parse_file") do |span|
             file[:content].each_with_index do |row, i|
               next if i <= 3
 
               data[main_key] ||= {
-                breadcrumb: build_breadcrumb(row),
+                name: "",
+                path: "",
                 resultats: []
               }
               l = data[main_key][:resultats][index] || default_hash(row, file[:name])
@@ -79,11 +71,10 @@ module VR
 
         def update_candidats(data, entry)
           entry.drop(18).each_slice(7) do |c|
-            nom = c[2]
-            prenom = c[3]
+            nom = c[2] + " " + c[3]
             voix = c[4]
 
-            existing = data.find_index { |s| s[:nom] == nom && s[:prenom] == prenom }
+            existing = data.find_index { |s| s[:nom] == nom }
             if existing
               data[existing][:voix] += voix
               next
@@ -91,7 +82,6 @@ module VR
 
             data << {
               nom: nom,
-              prenom: prenom,
               liste: "",
               voix: voix
             }

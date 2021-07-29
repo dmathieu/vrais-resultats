@@ -13,10 +13,6 @@ module VR
       @path = path
     end
 
-    def config
-      @config ||= JSON.parse(fetch.read).map(&:deep_symbolize_keys)
-    end
-
     def each(&block)
       config.each do |c|
         VR.tracer.in_span("dataset.#{c[:name].parameterize}") do |span|
@@ -34,6 +30,10 @@ module VR
     end
 
     private
+
+    def config
+      @config ||= JSON.parse(fetch.read).map(&:deep_symbolize_keys)
+    end
 
     def fetch
       @data = File.open(File.expand_path(@path))
