@@ -35,24 +35,6 @@ module VR
           "Circoncription #{row[2]} #{row[1]}"
         end
 
-        def build_breadcrumb(row)
-          [
-            {
-              name: @config[:name],
-              path: "/" + @config[:name].parameterize
-            },
-            {
-              name: row[1],
-              path: "/" + @config[:name].parameterize + "/" + row[1].parameterize,
-              type: :departement
-            },
-            {
-              name: row_name(row),
-              path: "/" + @config[:name].parameterize + "/" + row[1].parameterize + "/" + row[2].to_s
-            }
-          ]
-        end
-
         def parse_file(file, index, data)
           VR.tracer.in_span("reducer.parse_file") do |span|
             file[:content].each_with_index do |row, i|
@@ -62,8 +44,8 @@ module VR
               next if name == false || name.nil?
 
               data[main_key(row)] ||= {
-                breadcrumb: build_breadcrumb(row),
                 name: name,
+                path: row[1].parameterize + "/" + row[2].to_s,
                 resultats: []
               }
               l = data[main_key(row)][:resultats][index] || default_hash(row, file[:name])

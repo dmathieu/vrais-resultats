@@ -28,7 +28,7 @@ describe VR::Reducer::Legislatives::Annee2017 do
     it "turns a content array into a hash" do
       expect(subject.content).not_to be_empty
       expect(subject.content[:data].length).to eql(1)
-      expect(subject.content[:data][0].keys).to eql([:breadcrumb, :name, :resultats])
+      expect(subject.content[:data][0].keys).to eql([:name, :path, :resultats])
       expect(subject.content[:data][0][:resultats].length).to eql(2)
     end
   end
