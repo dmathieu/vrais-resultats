@@ -31,22 +31,14 @@ module VR
           "national"
         end
 
-        def build_breadcrumb(row)
-          [
-            {
-              name: @config[:name],
-              path: "/" + @config[:name].parameterize
-            }
-          ]
-        end
-
         def parse_file(file, index, data)
           VR.tracer.in_span("reducer.parse_file") do |span|
             file[:content].each_with_index do |row, i|
               next if i <= 3
 
               data[main_key] ||= {
-                breadcrumb: build_breadcrumb(row),
+                name: "",
+                path: "",
                 resultats: []
               }
               l = data[main_key][:resultats][index] || default_hash(row, file[:name])

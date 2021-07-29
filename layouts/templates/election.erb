@@ -1,20 +1,13 @@
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <% @item[:breadcrumb].each do |b| %>
-      <li class="breadcrumb-item <%= is_current?(b[:path]) ? "active" : "" %>">
-        <% if is_current?(b[:path]) %>
-          <%= b[:name] %>
-        <% else %>
-          <a href="<%= b[:path] %>"><%= b[:name] %></a>
-        <% end %>
-      </li>
-    <% end %>
-  </ol>
-</nav>
+<%= render '/breadcrumb.*' %>
 
 <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
   <div class="col-md-12 px-0">
-    <h1 class="display-4 fst-italic"><%= @item[:election] %> - <%= @item[:name] %></h1>
+    <h1 class="display-4 fst-italic">
+      <%= @item[:election] %>
+      <% unless @item[:name].blank? %>
+        - <%= @item[:name] %>
+      <% end %>
+    </h1>
   </div>
 </div>
 
