@@ -1,6 +1,7 @@
 class Result < ActiveRecord::Base
   belongs_to :area
   belongs_to :round
+  has_many :candidats
 
   validates :area_id,
     presence: true,

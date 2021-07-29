@@ -20,12 +20,11 @@ ActiveRecord::Schema.define(version: 5) do
   end
 
   create_table "candidats", force: :cascade do |t|
-    t.integer "area_id"
-    t.integer "round_id"
+    t.integer "result_id"
     t.string "nom"
     t.string "liste"
     t.integer "voix", default: 0
-    t.index ["nom", "area_id", "round_id"], name: "index_candidats_on_nom_and_area_id_and_round_id", unique: true
+    t.index ["nom", "result_id"], name: "index_candidats_on_nom_and_result_id", unique: true
   end
 
   create_table "events", force: :cascade do |t|
