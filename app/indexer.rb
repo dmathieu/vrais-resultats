@@ -29,7 +29,7 @@ module VR
 
         data[:resultats].each do |resultat|
           round = event.rounds.find_or_create_by!(name: resultat[:name])
-          round.results.create!(
+          result = round.results.create!(
             area_id: area.id,
             inscrits: resultat[:inscrits],
             abstentions: resultat[:abstentions],
@@ -40,8 +40,7 @@ module VR
           )
 
           resultat[:candidats].each do |candidat|
-            round.candidats.create!(
-              area_id: area.id,
+            result.candidats.create!(
               nom: candidat[:nom],
               liste: candidat[:liste],
               voix: candidat[:voix]
