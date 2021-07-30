@@ -4,6 +4,7 @@ module Main
   end
 
   def page_title(item)
+    return @item[:title] unless @item[:title].blank?
     elements = []
 
     elements << @item[:name] unless @item[:name].blank?
