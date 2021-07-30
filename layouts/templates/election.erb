@@ -76,7 +76,7 @@
         <div id="tour-<%= index %>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
             <% sort_candidats(resultat[:candidats]).each do |candidat| %>
-              <%= candidat[:prenom] %> <%= candidat[:nom] %>
+              <%= candidat[:nom] %>
               <% if !candidat[:liste].empty? %>
                 - <%= candidat[:liste].titleize %>
               <% end %>
