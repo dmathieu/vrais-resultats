@@ -299,6 +299,7 @@ DEPENDENCIES
   opentelemetry-instrumentation-faraday
   opentelemetry-sdk
   otel-honeycomb-ruby!
+  pry
   roo
   roo-xls
   rspec
