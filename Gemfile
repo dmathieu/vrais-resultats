@@ -30,6 +30,8 @@ gem "otel-honeycomb-ruby",
   github: "dmathieu/otel-honeycomb-ruby",
   branch: "main"
 
+gem "pry"
+
 group :development do
   gem "webrick"
   gem "rspec"
