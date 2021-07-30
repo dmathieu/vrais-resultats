@@ -5,4 +5,8 @@ class Event < ActiveRecord::Base
   validates :name,
     presence: true,
     uniqueness: true
+
+  def path
+    "/#{name.parameterize}"
+  end
 end
