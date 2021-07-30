@@ -18,13 +18,11 @@ module Election
   def all_data(resultat)
     candidats = resultat[:candidats].dup
     candidats << {
-      prenom: "",
       nom: "Abstentions",
       liste: "",
       voix: resultat[:abstentions]
     }
     candidats << {
-      prenom: "",
       nom: "Blancs + Nuls",
       liste: "",
       voix: resultat[:blancs] + resultat[:nuls]
