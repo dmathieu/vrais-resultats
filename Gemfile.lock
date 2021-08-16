@@ -262,7 +262,7 @@ GEM
     tty-command (0.10.1)
       pastel (~> 0.8)
     tty-platform (0.3.0)
-    tty-which (0.4.2)
+    tty-which (0.5.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unf (0.1.4)
