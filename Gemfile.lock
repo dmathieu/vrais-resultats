@@ -64,7 +64,7 @@ GEM
     diff-lcs (1.4.4)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    excon (0.85.0)
+    excon (0.86.0)
     execjs (2.8.1)
     faraday (1.8.0)
       faraday-em_http (~> 1.0)
