@@ -191,7 +191,7 @@ GEM
       opentelemetry-common (~> 0.19.0)
       opentelemetry-instrumentation-base (~> 0.18.1)
     parallel (1.21.0)
-    parser (3.0.3.0)
+    parser (3.0.3.1)
       ast (~> 2.4.1)
     pastel (0.8.0)
       tty-color (~> 0.5)
