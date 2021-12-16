@@ -1,0 +1,18 @@
+[
+	{
+		"name": "Départementales 2021",
+		"format": "xlsx",
+		"data": [
+			{
+				"name": "Premier tour",
+				"url": "https://www.data.gouv.fr/fr/datasets/r/e13c82fd-9d19-4674-ab94-1029579d8945"
+			},
+			{
+				"name": "Second tour",
+				"url": "https://www.data.gouv.fr/fr/datasets/r/ad9dc25f-1688-48d4-9cf3-ceed95052988"
+			}
+		],
+		"reducer": "departementales",
+		"annee": 2021
+	}
+]

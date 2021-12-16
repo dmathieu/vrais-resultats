@@ -1,0 +1,18 @@
+[
+	{
+		"name": "Législatives 2017",
+		"format": "xlsx",
+		"data": [
+			{
+				"name": "Premier tour",
+				"url": "https://www.data.gouv.fr/fr/datasets/r/7b613086-b5f5-4745-82e8-11b7397f9334"
+			},
+			{
+				"name": "Second tour",
+				"url": "https://www.data.gouv.fr/fr/datasets/r/a6df654f-11ad-4dcc-872c-d3fd94ca3e49"
+			}
+		],
+		"reducer": "legislatives",
+		"annee": 2017
+	}
+]

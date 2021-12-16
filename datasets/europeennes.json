@@ -1,0 +1,14 @@
+[
+	{
+		"name": "Européennes 2019",
+		"format": "xls",
+		"data": [
+			{
+				"name": "Résultats",
+				"url": "https://www.data.gouv.fr/fr/datasets/r/4a26fcae-494b-4ef6-82bb-49fdd32c8159"
+			}
+		],
+		"reducer": "europeennes",
+		"annee": 2019
+	}
+]

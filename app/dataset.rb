@@ -15,16 +15,18 @@ module VR
 
     def each(&block)
       config.each do |c|
-        VR.tracer.in_span("dataset.#{c[:name].parameterize}") do |span|
-          mapper = VR::Mapper.new(c)
-          path = cache_path(c)
+        c.each do |f|
+          VR.tracer.in_span("dataset.#{f[:name].parameterize}") do |span|
+            mapper = VR::Mapper.new(f)
+            path = cache_path(f)
 
-          unless File.exist?(path)
-            r = VR::Reducer.new(c, mapper)
-            File.write(path, r.content.to_json)
+            unless File.exist?(path)
+              r = VR::Reducer.new(f, mapper)
+              File.write(path, r.content.to_json)
+            end
+
+            block.call(JSON.parse(File.read(path)).deep_symbolize_keys)
           end
-
-          block.call(JSON.parse(File.read(path)).deep_symbolize_keys)
         end
       end
     end
@@ -32,11 +34,11 @@ module VR
     private
 
     def config
-      @config ||= JSON.parse(fetch.read).map(&:deep_symbolize_keys)
-    end
-
-    def fetch
-      @data = File.open(File.expand_path(@path))
+      @config ||= Dir.glob(@path + "/**/*.json").map do |f|
+        JSON.parse(File.open(File.expand_path(f)).read).map(&:deep_symbolize_keys)
+      rescue JSON::ParserError => e
+        raise "JSON parse error in #{f}: #{e}"
+      end
     end
 
     def cache_path(config)
