@@ -8,7 +8,10 @@ $LOAD_PATH.unshift File.expand_path("../app", __dir__)
 require "vr"
 
 FileUtils.mkdir_p "cache/fetcher"
-ds = VR::Dataset.new("datasets.json")
+ds = VR::Dataset.new("datasets/")
+
+print "Migrating database"
+`bundle exec rake db:create db:migrate`
 
 print "Starting index\n"
 ds.each do |content|

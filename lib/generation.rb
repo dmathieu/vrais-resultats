@@ -3,7 +3,7 @@ require "vr"
 
 module Generation
   def dataset
-    @dataset ||= VR::Dataset.new("datasets.json")
+    @dataset ||= VR::Dataset.new("datasets/")
   end
 
   def auto_generate_pages

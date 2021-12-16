@@ -1,0 +1,18 @@
+[
+	{
+		"name": "Présidentielles 2017",
+		"format": "xls",
+		"data": [
+			{
+				"name": "Premier tour",
+				"url": "https://www.data.gouv.fr/s/resources/election-presidentielle-des-23-avril-et-7-mai-2017-resultats-definitifs-du-1er-tour-par-communes/20170427-100544/Presidentielle_2017_Resultats_Communes_Tour_1_c.xls"
+			},
+			{
+				"name": "Second tour",
+				"url": "https://www.data.gouv.fr/s/resources/election-presidentielle-des-23-avril-et-7-mai-2017-resultats-definitifs-du-2nd-tour-par-communes/20170511-093054/Presidentielle_2017_Resultats_Communes_Tour_2_c.xls"
+			}
+		],
+		"reducer": "presidentielles",
+		"annee": 2017
+	}
+]
