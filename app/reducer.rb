@@ -8,12 +8,8 @@ require "reducer/regionales"
 
 module VR
   module Reducer
-    LIST = {
-      municipales: Reducer::Municipales
-    }
-
-    def self.new(config, mapper)
-      const_get(config[:reducer].camelize).new(config, mapper)
+    def self.find(config, mapper)
+      "VR::Reducer::#{config[:reducer].camelize}::Annee#{config[:annee]}".constantize.new(config, mapper)
     end
   end
 end

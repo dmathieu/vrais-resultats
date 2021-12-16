@@ -21,7 +21,7 @@ module VR
             path = cache_path(f)
 
             unless File.exist?(path)
-              r = VR::Reducer.new(f, mapper)
+              r = VR::Reducer.find(f, mapper)
               File.write(path, r.content.to_json)
             end
 
