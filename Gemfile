@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "nanoc", "~> 4.12.3"
 gem "adsf"
+gem "rake"
 
 gem "guard-nanoc"
 
@@ -26,9 +27,7 @@ gem "sqlite3"
 gem "opentelemetry-api"
 gem "opentelemetry-sdk"
 gem "opentelemetry-instrumentation-faraday"
-gem "otel-honeycomb-ruby",
-  github: "dmathieu/otel-honeycomb-ruby",
-  branch: "main"
+gem "opentelemetry-exporter-otlp"
 
 gem "pry"
 

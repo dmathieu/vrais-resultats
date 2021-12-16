@@ -1,27 +1,16 @@
-GIT
-  remote: https://github.com/dmathieu/otel-honeycomb-ruby.git
-  revision: 7de1a9523d636cea9feb7cc4c809383ecbde0ada
-  branch: main
-  specs:
-    otel-honeycomb-ruby (0.0.1)
-      libhoney (~> 1.18)
-      opentelemetry-api (= 1.0.0.rc2)
-      opentelemetry-sdk (= 1.0.0.rc2)
-
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (6.1.4.1)
-      activesupport (= 6.1.4.1)
-    activerecord (6.1.4.1)
-      activemodel (= 6.1.4.1)
-      activesupport (= 6.1.4.1)
-    activesupport (6.1.4.1)
+    activemodel (7.0.0)
+      activesupport (= 7.0.0)
+    activerecord (7.0.0)
+      activemodel (= 7.0.0)
+      activesupport (= 7.0.0)
+    activesupport (7.0.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-      zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     adsf (1.4.6)
@@ -62,9 +51,6 @@ GEM
     ddmetrics (1.0.1)
     ddplugin (1.0.3)
     diff-lcs (1.4.4)
-    domain_name (0.5.20190701)
-      unf (>= 0.0.5, < 1.0.0)
-    excon (0.89.0)
     execjs (2.8.1)
     faraday (1.8.0)
       faraday-em_http (~> 1.0)
@@ -88,10 +74,9 @@ GEM
     faraday_middleware (1.2.0)
       faraday (~> 1.0)
     ffi (1.15.4)
-    ffi-compiler (1.0.1)
-      ffi (>= 1.0.0)
-      rake
     formatador (0.3.0)
+    google-protobuf (3.19.1-x86_64-darwin)
+    google-protobuf (3.19.1-x86_64-linux)
     guard (2.18.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -110,31 +95,16 @@ GEM
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
     hashdiff (1.0.1)
-    http (5.0.4)
-      addressable (~> 2.8)
-      http-cookie (~> 1.0)
-      http-form_data (~> 2.2)
-      llhttp-ffi (~> 0.4.0)
-    http-cookie (1.0.4)
-      domain_name (~> 0.5)
-    http-form_data (2.3.0)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     json (2.6.1)
     json_schema (0.21.0)
-    libhoney (1.21.0)
-      addressable (~> 2.0)
-      excon
-      http (>= 2.0, < 6.0)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    llhttp-ffi (0.4.0)
-      ffi-compiler (~> 1.0)
-      rake (~> 13.0)
     lumberjack (1.2.8)
     method_source (1.0.0)
-    minitest (5.14.4)
+    minitest (5.15.0)
     multi_json (1.15.0)
     multipart-post (2.1.1)
     nanoc (4.12.3)
@@ -177,19 +147,27 @@ GEM
     notiffany (0.1.3)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    opentelemetry-api (1.0.0.rc2)
-    opentelemetry-common (0.19.0)
-      opentelemetry-api (~> 1.0.0.rc2)
-    opentelemetry-instrumentation-base (0.18.1)
-      opentelemetry-api (~> 1.0.0.rc2)
-    opentelemetry-instrumentation-faraday (0.19.0)
-      opentelemetry-api (~> 1.0.0.rc2)
-      opentelemetry-common (~> 0.19.0)
-      opentelemetry-instrumentation-base (~> 0.18.1)
-    opentelemetry-sdk (1.0.0.rc2)
-      opentelemetry-api (~> 1.0.0.rc2)
-      opentelemetry-common (~> 0.19.0)
-      opentelemetry-instrumentation-base (~> 0.18.1)
+    opentelemetry-api (1.0.1)
+    opentelemetry-common (0.19.3)
+      opentelemetry-api (~> 1.0)
+    opentelemetry-exporter-otlp (0.21.0)
+      google-protobuf (~> 3.7)
+      opentelemetry-api (~> 1.0)
+      opentelemetry-common (~> 0.19.3)
+      opentelemetry-sdk (~> 1.0)
+    opentelemetry-instrumentation-base (0.19.0)
+      opentelemetry-api (~> 1.0)
+    opentelemetry-instrumentation-faraday (0.19.3)
+      opentelemetry-api (~> 1.0)
+      opentelemetry-common (~> 0.19.3)
+      opentelemetry-instrumentation-base (~> 0.19.0)
+    opentelemetry-sdk (1.0.2)
+      opentelemetry-api (~> 1.0)
+      opentelemetry-common (~> 0.19.3)
+      opentelemetry-instrumentation-base (~> 0.19.0)
+      opentelemetry-semantic_conventions
+    opentelemetry-semantic_conventions (1.6.1)
+      opentelemetry-api (~> 1.0)
     parallel (1.21.0)
     parser (3.0.3.2)
       ast (~> 2.4.1)
@@ -266,9 +244,6 @@ GEM
     tty-which (0.5.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    unf (0.1.4)
-      unf_ext
-    unf_ext (0.0.8)
     unicode-display_width (2.1.0)
     w3c_validators (1.3.6)
       json (>= 1.8)
@@ -299,10 +274,11 @@ DEPENDENCIES
   guard-nanoc
   nanoc (~> 4.12.3)
   opentelemetry-api
+  opentelemetry-exporter-otlp
   opentelemetry-instrumentation-faraday
   opentelemetry-sdk
-  otel-honeycomb-ruby!
   pry
+  rake
   roo
   roo-xls
   rspec
