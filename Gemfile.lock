@@ -50,7 +50,7 @@ GEM
       ref (~> 2.0)
     ddmetrics (1.0.1)
     ddplugin (1.0.3)
-    diff-lcs (1.4.4)
+    diff-lcs (1.5.0)
     execjs (2.8.1)
     faraday (1.8.0)
       faraday-em_http (~> 1.0)
