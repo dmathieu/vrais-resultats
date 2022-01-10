@@ -44,6 +44,6 @@ RSpec.configure do |config|
   end
 
   def file_fixture(name)
-    File.open(File.expand_path("spec/fixtures/" + name)).read
+    File.read(File.expand_path("spec/fixtures/" + name))
   end
 end
