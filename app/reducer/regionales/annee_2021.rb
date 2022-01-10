@@ -43,7 +43,7 @@ module VR
             next if name == false || name.nil?
 
             data[main_key(row)] ||= {
-              name: name,
+              name:,
               path: row[1].parameterize,
               resultats: []
             }
@@ -65,7 +65,7 @@ module VR
       def default_hash(entry, name)
         h = {
           candidats: [],
-          name: name
+          name:
         }
 
         KEYMAP.each do |k|
@@ -91,9 +91,9 @@ module VR
             end
 
             data << {
-              nom: nom,
-              liste: liste,
-              voix: voix
+              nom:,
+              liste:,
+              voix:
             }
           end
 

@@ -20,7 +20,7 @@ module VR
       @config[:data].each_with_index.map do |v, k|
         path = cache_path(k)
         File.write(path, download(v[:url]).body) unless File.exist?(path)
-        {name: v[:name], path: path}
+        {name: v[:name], path:}
       end
     end
 

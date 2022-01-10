@@ -3,7 +3,7 @@ describe VR::Reducer do
     it "can't create unknown reducers" do
       expect do
         described_class.find({reducer: "foobar"}, double(:mapper))
-      end.to raise_error("uninitialized constant VR::Reducer::Foobar")
+      end.to raise_error(NameError)
     end
 
     it "creates a municipales reducer" do
