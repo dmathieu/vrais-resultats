@@ -63,7 +63,7 @@ module VR
       def default_hash(entry, name)
         h = {
           candidats: [],
-          name: name
+          name:
         }
 
         KEYMAP.each do |k|
@@ -105,9 +105,9 @@ module VR
             end
 
             data << {
-              nom: nom,
-              liste: liste,
-              voix: voix
+              nom:,
+              liste:,
+              voix:
             }
           end
 
