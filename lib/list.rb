@@ -27,7 +27,7 @@ module List
         inscrits: resultats.inject(0) { |sum, hash| sum + hash[:inscrits] },
         exprimes: resultats.inject(0) { |sum, hash| sum + hash[:exprimes] }
       },
-      candidats: candidats
+      candidats:
     }
   end
 end
