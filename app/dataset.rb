@@ -35,7 +35,7 @@ module VR
 
     def config
       @config ||= Dir.glob(@path + "/**/*.json").map do |f|
-        JSON.parse(File.open(File.expand_path(f)).read).map(&:deep_symbolize_keys)
+        JSON.parse(File.read(File.expand_path(f))).map(&:deep_symbolize_keys)
       rescue JSON::ParserError => e
         raise "JSON parse error in #{f}: #{e}"
       end
