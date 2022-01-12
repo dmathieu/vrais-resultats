@@ -13,18 +13,8 @@ module VR
 
       private
 
-      def data
-        @data ||= parse_data
-      end
-
       def parse_data
-        VR.tracer.in_span("reducer.parse_data") do |span|
-          data = {}
-          @mapper.each_with_index do |file, index|
-            data = parse_file(file, index, data)
-          end
-          data.values.select { |e| e[:resultats].any? { |r| !r.nil? && r[:inscrits] >= 1000 } }
-        end
+        super.select { |e| e[:resultats].any? { |r| !r.nil? && r[:inscrits] >= 1000 } }
       end
 
       private
