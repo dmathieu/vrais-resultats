@@ -17,6 +17,20 @@ module VR
       private
 
       def data
+        @data ||= parse_data
+      end
+
+      def parse_data
+        VR.tracer.in_span("reducer.parse_data") do |span|
+          data = {}
+          @mapper.each_with_index do |file, index|
+            data = parse_file(file, index, data)
+          end
+          data.values
+        end
+      end
+
+      def parse_file(file, index, data)
         raise NotImplementedError
       end
     end
