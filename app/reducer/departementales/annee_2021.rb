@@ -1,51 +1,29 @@
 module VR
   module Reducer
     class Departementales::Annee2021 < Departementales
-      KEYMAP = [
-        {key: :inscrits, index: 4, default: 0},
-        {key: :abstentions, index: 5, default: 0},
-        {key: :votants, index: 7, default: 0},
-        {key: :blancs, index: 9, default: 0},
-        {key: :nuls, index: 12, default: 0},
-        {key: :exprimes, index: 15, default: 0}
-      ]
-
       private
 
-      def main_key(row)
-        row[1].parameterize + "/" + row[2].to_s
+      def keymap
+        [
+          {key: :inscrits, index: 4, default: 0},
+          {key: :abstentions, index: 5, default: 0},
+          {key: :votants, index: 7, default: 0},
+          {key: :blancs, index: 9, default: 0},
+          {key: :nuls, index: 12, default: 0},
+          {key: :exprimes, index: 15, default: 0}
+        ]
+      end
+
+      def skip_row_if(i, row)
+        return true if i < 1
       end
 
       def row_name(row)
         "Circoncription #{row[2]} #{row[1]}"
       end
 
-      def parse_file(file, index, data)
-        VR.tracer.in_span("reducer.parse_file") do |span|
-          file[:content].each_with_index do |row, i|
-            next if i < 1
-            next if row.empty?
-            name = row_name(row)
-            next if name == false || name.nil?
-
-            data[main_key(row)] ||= {
-              name:,
-              path: row[1].parameterize + "/" + row[2].to_s,
-              resultats: []
-            }
-            l = data[main_key(row)][:resultats][index] || default_hash(row, file[:name])
-
-            KEYMAP.each do |k|
-              l[k[:key]] += row[k[:index]]
-            end
-
-            l[:candidats] = update_candidats(l[:candidats], row)
-
-            data[main_key(row)][:resultats][index] = l
-          end
-
-          data
-        end
+      def row_path(row)
+        row[1].parameterize + "/" + row[2].to_s
       end
 
       def default_hash(entry, name)
