@@ -1,16 +1,6 @@
 module VR
   module Reducer
     class Municipales::Annee2020 < Municipales
-      NAMEKEY = 3
-      KEYMAP = [
-        {key: :inscrits, index: 5, default: 0},
-        {key: :abstentions, index: 6, default: 0},
-        {key: :votants, index: 8, default: 0},
-        {key: :blancs, index: 10, default: 0},
-        {key: :nuls, index: 13, default: 0},
-        {key: :exprimes, index: 16, default: 0}
-      ]
-
       private
 
       def parse_data
@@ -19,48 +9,27 @@ module VR
 
       private
 
-      def main_key(row)
-        row[1].parameterize + "/" + row[NAMEKEY].parameterize
+      def keymap
+        [
+          {key: :inscrits, index: 5, default: 0},
+          {key: :abstentions, index: 6, default: 0},
+          {key: :votants, index: 8, default: 0},
+          {key: :blancs, index: 10, default: 0},
+          {key: :nuls, index: 13, default: 0},
+          {key: :exprimes, index: 16, default: 0}
+        ]
       end
 
-      def parse_file(file, index, data)
-        VR.tracer.in_span("reducer.parse_file") do |span|
-          file[:content].each_with_index do |row, i|
-            next if i == 0
-            next if row[NAMEKEY] == false || row[NAMEKEY].nil?
-            next if row.empty?
-
-            data[main_key(row)] ||= {
-              path: row[1].parameterize + "/" + row[NAMEKEY].parameterize,
-              name: row[NAMEKEY],
-              resultats: []
-            }
-            l = data[main_key(row)][:resultats][index] || default_hash(row, file[:name])
-
-            KEYMAP.each do |k|
-              l[k[:key]] += row[k[:index]]
-            end
-
-            l[:candidats] = update_candidats(l[:candidats], row)
-
-            data[main_key(row)][:resultats][index] = l
-          end
-
-          data
-        end
+      def skip_row_if(i, row)
+        i == 0
       end
 
-      def default_hash(entry, name)
-        h = {
-          candidats: [],
-          name:
-        }
+      def row_name(row)
+        row[3]
+      end
 
-        KEYMAP.each do |k|
-          h[k[:key]] = k[:default]
-        end
-
-        h
+      def row_path(row)
+        row[1].parameterize + "/" + row_name(row).parameterize
       end
 
       def update_candidats(data, entry)
