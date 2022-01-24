@@ -75,7 +75,7 @@ GEM
     faraday_middleware (1.2.0)
       faraday (~> 1.0)
     ffi (1.15.5)
-    formatador (0.3.0)
+    formatador (1.0.0)
     google-protobuf (3.19.3)
     guard (2.18.0)
       formatador (>= 0.2.4)
