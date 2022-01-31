@@ -76,7 +76,8 @@ GEM
       faraday (~> 1.0)
     ffi (1.15.5)
     formatador (1.0.0)
-    google-protobuf (3.19.4)
+    google-protobuf (3.19.4-x86_64-darwin)
+    google-protobuf (3.19.4-x86_64-linux)
     guard (2.18.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -254,7 +255,7 @@ GEM
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
     webrick (1.7.0)
-    zeitwerk (2.5.3)
+    zeitwerk (2.5.4)
 
 PLATFORMS
   x86_64-darwin-19
