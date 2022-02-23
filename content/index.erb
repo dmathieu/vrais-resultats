@@ -37,7 +37,7 @@ title: Les vrais résultats des élections Fran&ccedil;aises, en comptant l'abst
   </div>
 
   <div class="row mb-2">
-    <% Event.all.each do |event| %>
+    <% Event.order(annee: :desc).all.each do |event| %>
       <div class="col-md-6">
         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
           <div class="col p-4 d-flex flex-column position-static">
