@@ -1,6 +1,6 @@
 <%= all_elections.map do |i|
   {
     path: i.path,
-    name: [i[:election], i[:name]].compact.join(" - ")
+    name: [i[:election], i[:name]].delete_if(&:blank?).compact.join(" - ")
   }
 end.to_json %>
