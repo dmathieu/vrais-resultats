@@ -22,7 +22,7 @@ module VR
 
             unless File.exist?(path)
               r = VR::Reducer.find(f, mapper)
-              File.write(path, r.content.to_json)
+              File.write(path, JSON.pretty_generate(r.content))
             end
 
             block.call(JSON.parse(File.read(path)).deep_symbolize_keys)
