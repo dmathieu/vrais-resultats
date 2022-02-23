@@ -14,5 +14,21 @@
 		],
 		"reducer": "presidentielles",
 		"annee": 2017
+	},
+	{
+		"name": "Présidentielles 2012",
+		"format": "csv",
+		"data": [
+			{
+				"name": "Premier tour",
+				"url": "https://static.data.gouv.fr/resources/elections-presidentielles-1965-2012-1/20150204-183733/cdsp_presi2012t1_circ.csv"
+			},
+			{
+				"name": "Second tour",
+				"url": "https://static.data.gouv.fr/resources/elections-presidentielles-1965-2012-1/20150204-183737/cdsp_presi2012t2_circ.csv"
+			}
+		],
+		"reducer": "presidentielles",
+		"annee": 2012
 	}
 ]
