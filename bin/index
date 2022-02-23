@@ -8,6 +8,7 @@ $LOAD_PATH.unshift File.expand_path("../app", __dir__)
 require "vr"
 
 FileUtils.mkdir_p "cache/fetcher"
+FileUtils.mkdir_p "cache/dataset"
 ds = VR::Dataset.new("datasets/")
 
 print "Migrating database"
