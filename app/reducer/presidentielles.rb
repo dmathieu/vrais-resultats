@@ -6,3 +6,4 @@ module VR
 end
 
 require "reducer/presidentielles/annee_2017"
+require "reducer/presidentielles/annee_2012"

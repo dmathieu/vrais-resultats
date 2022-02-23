@@ -1,0 +1,92 @@
+{
+  "name": "Présidentielles 2012",
+  "annee": 2012,
+  "data": [
+    {
+      "name": "",
+      "path": "",
+      "resultats": [
+        {
+          "candidats": [
+            {
+              "nom": "Nathalie ARTHAUD (LO)",
+              "liste": "",
+              "voix": 201547
+            },
+            {
+              "nom": "Philippe POUTOU (NPA)",
+              "liste": "",
+              "voix": 409225
+            },
+            {
+              "nom": "Jean-Luc MELENCHON (FG)",
+              "liste": "",
+              "voix": 3966434
+            },
+            {
+              "nom": "François HOLLANDE (PS)",
+              "liste": "",
+              "voix": 10228222
+            },
+            {
+              "nom": "Eva JOLY (EELV)",
+              "liste": "",
+              "voix": 823678
+            },
+            {
+              "nom": "François BAYROU (MODEM)",
+              "liste": "",
+              "voix": 3254787
+            },
+            {
+              "nom": "Nicolas SARKOZY (UMP)",
+              "liste": "",
+              "voix": 9694990
+            },
+            {
+              "nom": "Nicolas DUPONT-AIGNAN (DLR)",
+              "liste": "",
+              "voix": 639681
+            },
+            {
+              "nom": "Marine LE PEN (FN)",
+              "liste": "",
+              "voix": 6383262
+            },
+            {
+              "nom": "Jacques CHEMINADE (SP)",
+              "liste": "",
+              "voix": 89034
+            }
+          ],
+          "name": "Premier tour",
+          "inscrits": 45792871,
+          "abstentions": 9404623,
+          "votants": 36388248,
+          "nuls": 697388,
+          "exprimes": 35690860
+        },
+        {
+          "candidats": [
+            {
+              "nom": "François HOLLANDE (PS)",
+              "liste": "",
+              "voix": 17921096
+            },
+            {
+              "nom": "Nicolas SARKOZY (UMP)",
+              "liste": "",
+              "voix": 16755862
+            }
+          ],
+          "name": "Second tour",
+          "inscrits": 45830580,
+          "abstentions": 9010028,
+          "votants": 36820552,
+          "nuls": 2143594,
+          "exprimes": 34676958
+        }
+      ]
+    }
+  ]
+}

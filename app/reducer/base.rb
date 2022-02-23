@@ -33,6 +33,7 @@ module VR
       def parse_file(file, index, data)
         VR.tracer.in_span("reducer.parse_file") do |span|
           file[:content].each_with_index do |row, i|
+            @header = row if header_row == i
             next if skip_row_if(i, row)
             next if row.empty?
             next if row_name(row) == false || row_name(row).nil?
@@ -41,7 +42,11 @@ module VR
             l = data[row_path(row)][:resultats][index] || default_result(row, file[:name])
 
             keymap.each do |k|
-              l[k[:key]] += row[k[:index]]
+              l[k[:key]] += if k.key?(:fn)
+                k[:fn].call(row).to_i
+              else
+                row[k[:index]].to_i
+              end
             end
 
             l[:candidats] = update_candidats(l[:candidats], row)
@@ -108,6 +113,10 @@ module VR
 
       def skip_row_if(i, row)
         raise NotImplementedError
+      end
+
+      def header_row
+        nil
       end
 
       def candidats_split(entry)
