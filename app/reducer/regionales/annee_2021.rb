@@ -29,29 +29,13 @@ module VR
         row_name(row).parameterize
       end
 
-      def update_candidats(data, entry)
-        VR.tracer.in_span("reducer.update_candidats") do |span|
-          entry.drop(16).each_slice(9) do |c|
-            next if c.compact.empty?
-            nom = c[4]
-            liste = c[3]
-            voix = c[5]
-            next if nom.nil? || voix.nil?
-
-            existing = data.find_index { |s| s[:nom] == nom }
-            if existing
-              data[existing][:voix] += voix
-              next
-            end
-
-            data << {
-              nom:,
-              liste:,
-              voix:
-            }
-          end
-
-          data
+      def candidats_split(entry)
+        entry.drop(16).each_slice(9).each do |c|
+          yield({
+            nom: c[4],
+            voix: c[5],
+            liste: c[3]
+          })
         end
       end
     end

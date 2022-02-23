@@ -74,6 +74,26 @@ module VR
         }
       end
 
+      def update_candidats(data, entry)
+        candidats_split(entry) do |c|
+          next if c[:nom].nil? || c[:voix].nil?
+
+          existing = data.find_index { |s| s[:nom] == c[:nom] }
+          if existing
+            data[existing][:voix] += c[:voix]
+            next
+          end
+
+          data << {
+            nom: c[:nom],
+            liste: c[:liste],
+            voix: c[:voix]
+          }
+        end
+
+        data
+      end
+
       def keymap
         raise NotImplementedError
       end
@@ -90,7 +110,7 @@ module VR
         raise NotImplementedError
       end
 
-      def update_candidats(data, entry)
+      def candidats_split(entry)
         raise NotImplementedError
       end
     end
