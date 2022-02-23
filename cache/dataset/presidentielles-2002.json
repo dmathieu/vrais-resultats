@@ -1,0 +1,122 @@
+{
+  "name": "Présidentielles 2002",
+  "annee": 2002,
+  "data": [
+    {
+      "name": "",
+      "path": "",
+      "resultats": [
+        {
+          "candidats": [
+            {
+              "nom": "GLUCKSTEIN (PT)",
+              "liste": "",
+              "voix": 131701
+            },
+            {
+              "nom": "LAGUILLER (LO)",
+              "liste": "",
+              "voix": 1618065
+            },
+            {
+              "nom": "BESANCENOT (LCR)",
+              "liste": "",
+              "voix": 1201191
+            },
+            {
+              "nom": "HUE (PCF)",
+              "liste": "",
+              "voix": 955632
+            },
+            {
+              "nom": "JOSPIN (PS)",
+              "liste": "",
+              "voix": 4556214
+            },
+            {
+              "nom": "TAUBIRA (PRG)",
+              "liste": "",
+              "voix": 653048
+            },
+            {
+              "nom": "CHEVENEMENT (P. REP)",
+              "liste": "",
+              "voix": 1500105
+            },
+            {
+              "nom": "MAMERE (VERTS)",
+              "liste": "",
+              "voix": 1476718
+            },
+            {
+              "nom": "LEPAGE (CAP 21)",
+              "liste": "",
+              "voix": 528392
+            },
+            {
+              "nom": "BAYROU (UDF)",
+              "liste": "",
+              "voix": 1928104
+            },
+            {
+              "nom": "MADELIN (DL)",
+              "liste": "",
+              "voix": 1095881
+            },
+            {
+              "nom": "CHIRAC (UMP)",
+              "liste": "",
+              "voix": 5593721
+            },
+            {
+              "nom": "BOUTIN (UDF DISS.)",
+              "liste": "",
+              "voix": 334553
+            },
+            {
+              "nom": "LE PEN (FN)",
+              "liste": "",
+              "voix": 4759542
+            },
+            {
+              "nom": "MEGRET (MNR)",
+              "liste": "",
+              "voix": 659450
+            },
+            {
+              "nom": "SAINT-JOSSE (CNPT)",
+              "liste": "",
+              "voix": 1197698
+            }
+          ],
+          "name": "Premier tour",
+          "inscrits": 40567927,
+          "abstentions": 11389754,
+          "votants": 29178173,
+          "nuls": 988158,
+          "exprimes": 28190015
+        },
+        {
+          "candidats": [
+            {
+              "nom": "CHIRAC (UMP)",
+              "liste": "",
+              "voix": 25242975
+            },
+            {
+              "nom": "LE PEN (FN)",
+              "liste": "",
+              "voix": 5474450
+            }
+          ],
+          "name": "Second tour",
+          "inscrits": 40565332,
+          "abstentions": 8097586,
+          "votants": 32467746,
+          "nuls": 1750321,
+          "exprimes": 30717425
+        }
+      ]
+    }
+  ]
+}

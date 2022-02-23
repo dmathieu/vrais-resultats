@@ -1,0 +1,102 @@
+{
+  "name": "Présidentielles 2007",
+  "annee": 2007,
+  "data": [
+    {
+      "name": "",
+      "path": "",
+      "resultats": [
+        {
+          "candidats": [
+            {
+              "nom": "SCHIVARDI (PT)",
+              "liste": "",
+              "voix": 122774
+            },
+            {
+              "nom": "LAGUILLER (LO)",
+              "liste": "",
+              "voix": 485225
+            },
+            {
+              "nom": "BESANCENOT (LCR)",
+              "liste": "",
+              "voix": 1490804
+            },
+            {
+              "nom": "BOVE",
+              "liste": "",
+              "voix": 480029
+            },
+            {
+              "nom": "BUFFET (PC)",
+              "liste": "",
+              "voix": 704064
+            },
+            {
+              "nom": "ROYAL (PS)",
+              "liste": "",
+              "voix": 9452217
+            },
+            {
+              "nom": "VOYNET (VERTS)",
+              "liste": "",
+              "voix": 572719
+            },
+            {
+              "nom": "BAYROU (UDF)",
+              "liste": "",
+              "voix": 6776575
+            },
+            {
+              "nom": "SARKOZY (UMP)",
+              "liste": "",
+              "voix": 11374281
+            },
+            {
+              "nom": "DE VILLIERS MPF)",
+              "liste": "",
+              "voix": 812885
+            },
+            {
+              "nom": "LE PEN (FN)",
+              "liste": "",
+              "voix": 3807512
+            },
+            {
+              "nom": "NIHOUS (CNPT)",
+              "liste": "",
+              "voix": 418174
+            }
+          ],
+          "name": "Premier tour",
+          "inscrits": 44209214,
+          "abstentions": 7180090,
+          "votants": 37029124,
+          "nuls": 531865,
+          "exprimes": 36497259
+        },
+        {
+          "candidats": [
+            {
+              "nom": "ROYAL (PS)",
+              "liste": "",
+              "voix": 16702794
+            },
+            {
+              "nom": "SARKOZY (UMP)",
+              "liste": "",
+              "voix": 18856389
+            }
+          ],
+          "name": "Second tour",
+          "inscrits": 44208379,
+          "abstentions": 7091206,
+          "votants": 37117173,
+          "nuls": 1557990,
+          "exprimes": 35559183
+        }
+      ]
+    }
+  ]
+}

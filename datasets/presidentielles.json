@@ -30,5 +30,37 @@
 		],
 		"reducer": "presidentielles",
 		"annee": 2012
+	},
+	{
+		"name": "Présidentielles 2007",
+		"format": "csv",
+		"data": [
+			{
+				"name": "Premier tour",
+				"url": "https://static.data.gouv.fr/resources/elections-presidentielles-1965-2012-1/20150204-183726/cdsp_presi2007t1_circ.csv"
+			},
+			{
+				"name": "Second tour",
+				"url": "https://static.data.gouv.fr/resources/elections-presidentielles-1965-2012-1/20150204-183729/cdsp_presi2007t2_circ.csv"
+			}
+		],
+		"reducer": "presidentielles",
+		"annee": 2007
+	},
+	{
+		"name": "Présidentielles 2002",
+		"format": "csv",
+		"data": [
+			{
+				"name": "Premier tour",
+				"url": "https://static.data.gouv.fr/resources/elections-presidentielles-1965-2012-1/20150204-183716/cdsp_presi2002t1_circ.csv"
+			},
+			{
+				"name": "Second tour",
+				"url": "https://static.data.gouv.fr/resources/elections-presidentielles-1965-2012-1/20150204-183724/cdsp_presi2002t2_circ.csv"
+			}
+		],
+		"reducer": "presidentielles",
+		"annee": 2002
 	}
 ]
