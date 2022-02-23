@@ -39,28 +39,13 @@ module VR
         h
       end
 
-      def update_candidats(data, entry)
-        VR.tracer.in_span("reducer.update_candidats") do |span|
-          entry.drop(18).each_slice(7) do |c|
-            nom = c[1]
-            liste = ""
-            voix = c[3]
-            next if nom.nil? || voix.nil?
-
-            existing = data.find_index { |s| s[:nom] == nom }
-            if existing
-              data[existing][:voix] += voix
-              next
-            end
-
-            data << {
-              nom:,
-              liste:,
-              voix:
-            }
-          end
-
-          data
+      def candidats_split(entry)
+        entry.drop(18).each_slice(7).each do |c|
+          yield({
+            nom: c[1],
+            voix: c[3],
+            liste: ""
+          })
         end
       end
     end

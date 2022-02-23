@@ -32,45 +32,32 @@ module VR
         row[1].parameterize + "/" + row_name(row).parameterize
       end
 
-      def update_candidats(data, entry)
-        VR.tracer.in_span("reducer.update_candidats") do |span|
-          candidats = []
+      def candidats_split(entry)
+        candidats = []
 
-          current = 0
-          cdata = entry.dup.drop(19)
-          candidats[0] = [cdata[0]]
-          cdata.each_cons(3) do |prev, cur, nex|
-            if prev.is_a?(Numeric) && cur.is_a?(Numeric) && nex.is_a?(String)
-              current += 1
-              candidats[current] = []
-            end
-            candidats[current] << cur
+        current = 0
+        cdata = entry.dup.drop(19)
+        candidats[0] = [cdata[0]]
+        cdata.each_cons(3) do |prev, cur, nex|
+          if prev.is_a?(Numeric) && cur.is_a?(Numeric) && nex.is_a?(String)
+            current += 1
+            candidats[current] = []
           end
-          candidats[current] << data.last
+          candidats[current] << cur
+        end
 
-          candidats.each do |c|
-            nom = [c[3], c[4]].compact.join(" ")
-            liste = c[5] || ""
-            while c[6].is_a?(String)
-              liste += " " + c[6]
-              c.delete_at(6)
-            end
-            voix = c[6]
-
-            existing = data.find_index { |s| s[:nom] == nom }
-            if existing
-              data[existing][:voix] += voix
-              next
-            end
-
-            data << {
-              nom:,
-              liste:,
-              voix:
-            }
+        candidats.each do |c|
+          liste = c[5] || ""
+          while c[6].is_a?(String)
+            liste += " " + c[6]
+            c.delete_at(6)
           end
 
-          data
+          yield({
+            nom: [c[3], c[4]].compact.join(" "),
+            voix: c[6],
+            liste: liste
+          })
         end
       end
     end

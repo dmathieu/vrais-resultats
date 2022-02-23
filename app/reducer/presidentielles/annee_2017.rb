@@ -26,25 +26,14 @@ module VR
         ""
       end
 
-      def update_candidats(data, entry)
-        entry.drop(18).each_slice(7) do |c|
-          nom = c[2] + " " + c[3]
-          voix = c[4]
-
-          existing = data.find_index { |s| s[:nom] == nom }
-          if existing
-            data[existing][:voix] += voix
-            next
-          end
-
-          data << {
-            nom:,
-            liste: "",
-            voix:
-          }
+      def candidats_split(entry)
+        entry.drop(18).each_slice(7).each do |c|
+          yield({
+            nom: [c[2], c[3]].compact.join(" "),
+            voix: c[4],
+            liste: ""
+          })
         end
-
-        data
       end
     end
   end
