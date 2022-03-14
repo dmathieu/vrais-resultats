@@ -1,12 +1,12 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (7.0.2.2)
-      activesupport (= 7.0.2.2)
-    activerecord (7.0.2.2)
-      activemodel (= 7.0.2.2)
-      activesupport (= 7.0.2.2)
-    activesupport (7.0.2.2)
+    activemodel (7.0.2.3)
+      activesupport (= 7.0.2.3)
+    activerecord (7.0.2.3)
+      activemodel (= 7.0.2.3)
+      activesupport (= 7.0.2.3)
+    activesupport (7.0.2.3)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -76,7 +76,8 @@ GEM
       faraday (~> 1.0)
     ffi (1.15.5)
     formatador (1.1.0)
-    google-protobuf (3.19.4)
+    google-protobuf (3.19.4-x86_64-darwin)
+    google-protobuf (3.19.4-x86_64-linux)
     guard (2.18.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
