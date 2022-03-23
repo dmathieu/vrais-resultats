@@ -25,7 +25,7 @@ module VR
         ""
       end
 
-      def header_row() = 0
+      def header_row = 0
 
       def candidats_split(entry)
         @header.drop(7).each_with_index do |c, i|
