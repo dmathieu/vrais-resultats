@@ -22,7 +22,7 @@ module VR
 
       def spreadsheet(v)
         VR.tracer.in_span("mapper.open") do |span|
-          ::Roo::Spreadsheet.open(v[:path], csv_options: "r").sheet(0)
+          ::Roo::Spreadsheet.open(v[:path]).sheet(0)
         end
       end
     end
