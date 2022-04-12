@@ -5,6 +5,7 @@ module VR
   end
 end
 
+require "reducer/presidentielles/annee_2022"
 require "reducer/presidentielles/annee_2017"
 require "reducer/presidentielles/annee_2012"
 require "reducer/presidentielles/annee_2007"
