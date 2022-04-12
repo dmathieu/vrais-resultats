@@ -1,5 +1,17 @@
 [
 	{
+		"name": "Présidentielles 2022",
+		"format": "xlsx",
+		"data": [
+			{
+				"name": "Premier tour",
+				"url": "https://static.data.gouv.fr/resources/election-presidentielle-des-10-avril-et-24-avril-2022-resultats-du-1er-tour/20220411-110855/resultats-par-niveau-subcom-t1-france-entiere.xlsx"
+			}
+		],
+		"reducer": "presidentielles",
+		"annee": 2022
+	},
+	{
 		"name": "Présidentielles 2017",
 		"format": "xls",
 		"data": [

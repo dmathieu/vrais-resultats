@@ -1,0 +1,83 @@
+{
+  "name": "Présidentielles 2022",
+  "annee": 2022,
+  "data": [
+    {
+      "name": "",
+      "path": "",
+      "resultats": [
+        {
+          "candidats": [
+            {
+              "nom": "Nathalie ARTHAUD",
+              "liste": "",
+              "voix": 195850
+            },
+            {
+              "nom": "Fabien ROUSSEL",
+              "liste": "",
+              "voix": 799164
+            },
+            {
+              "nom": "Emmanuel MACRON",
+              "liste": "",
+              "voix": 9558923
+            },
+            {
+              "nom": "Jean LASSALLE",
+              "liste": "",
+              "voix": 1095498
+            },
+            {
+              "nom": "Marine LE PEN",
+              "liste": "",
+              "voix": 8107981
+            },
+            {
+              "nom": "Éric ZEMMOUR",
+              "liste": "",
+              "voix": 2442083
+            },
+            {
+              "nom": "Jean-Luc MÉLENCHON",
+              "liste": "",
+              "voix": 7603780
+            },
+            {
+              "nom": "Anne HIDALGO",
+              "liste": "",
+              "voix": 604082
+            },
+            {
+              "nom": "Yannick JADOT",
+              "liste": "",
+              "voix": 1587210
+            },
+            {
+              "nom": "Valérie PÉCRESSE",
+              "liste": "",
+              "voix": 1658035
+            },
+            {
+              "nom": "Philippe POUTOU",
+              "liste": "",
+              "voix": 265777
+            },
+            {
+              "nom": "Nicolas DUPONT-AIGNAN",
+              "liste": "",
+              "voix": 718044
+            }
+          ],
+          "name": "Premier tour",
+          "inscrits": 47302341,
+          "abstentions": 11890504,
+          "votants": 35411837,
+          "blancs": 538678,
+          "nuls": 236732,
+          "exprimes": 34636427
+        }
+      ]
+    }
+  ]
+}
