@@ -14,11 +14,11 @@ module Main
   end
 
   def page_description(item)
-    if item.key?(:election)
-      return "Résultats de l'élection #{item[:election]} pour #{item[:name]}"
-    end
-    if item.key?(:name)
-      return "Résultats des élections #{item[:name]}"
+    if !item[:election].blank?
+      c = "Résultats des élections #{item[:election]}"
+      c += " pour #{item[:name]}" unless item[:name].blank?
+
+      return c
     end
 
     "Vrais résultats des élections Fran&ccedil;aises"
