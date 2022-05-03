@@ -76,6 +76,27 @@
           "blancs": 538678,
           "nuls": 236732,
           "exprimes": 34636427
+        },
+        {
+          "candidats": [
+            {
+              "nom": "Emmanuel MACRON",
+              "liste": "",
+              "voix": 18765228
+            },
+            {
+              "nom": "Marine LE PEN",
+              "liste": "",
+              "voix": 13285816
+            }
+          ],
+          "name": "Second tour",
+          "inscrits": 48742720,
+          "abstentions": 13653222,
+          "votants": 35089498,
+          "blancs": 2233378,
+          "nuls": 805076,
+          "exprimes": 32051044
         }
       ]
     }

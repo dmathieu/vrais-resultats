@@ -6,6 +6,10 @@
 			{
 				"name": "Premier tour",
 				"url": "https://static.data.gouv.fr/resources/election-presidentielle-des-10-avril-et-24-avril-2022-resultats-du-1er-tour/20220411-110855/resultats-par-niveau-subcom-t1-france-entiere.xlsx"
+			},
+			{
+				"name": "Second tour",
+				"url": "https://static.data.gouv.fr/resources/election-presidentielle-des-10-et-24-avril-2022-resultats-definitifs-du-2nd-tour/20220428-142427/resultats-par-niveau-subcom-t2-france-entiere.xlsx"
 			}
 		],
 		"reducer": "presidentielles",

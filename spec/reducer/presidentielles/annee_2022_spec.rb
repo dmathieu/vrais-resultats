@@ -7,6 +7,10 @@ describe VR::Reducer::Presidentielles::Annee2022 do
         {
           name: "1er tour",
           url: "https://example.com/tour-1"
+        },
+        {
+          name: "2e tour",
+          url: "https://example.com/tour-2"
         }
       ],
       format: "xlsx"
@@ -16,6 +20,8 @@ describe VR::Reducer::Presidentielles::Annee2022 do
   before :each do
     stub_request(:get, "https://example.com/tour-1")
       .to_return(status: 200, body: file_fixture("presidentielles_2022/tour-1.xlsx"), headers: {})
+    stub_request(:get, "https://example.com/tour-2")
+      .to_return(status: 200, body: file_fixture("presidentielles_2022/tour-2.xlsx"), headers: {})
   end
 
   describe "new" do
@@ -23,7 +29,7 @@ describe VR::Reducer::Presidentielles::Annee2022 do
       expect(subject.content).not_to be_empty
       expect(subject.content[:data].length).to eql(1)
       expect(subject.content[:data][0].keys).to eql([:name, :path, :resultats])
-      expect(subject.content[:data][0][:resultats].length).to eql(1)
+      expect(subject.content[:data][0][:resultats].length).to eql(2)
     end
   end
 end
