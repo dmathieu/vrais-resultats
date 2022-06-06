@@ -110,7 +110,7 @@ GEM
     method_source (1.0.0)
     minitest (5.15.0)
     multi_json (1.15.0)
-    multipart-post (2.1.1)
+    multipart-post (2.2.0)
     nanoc (4.12.6)
       addressable (~> 2.5)
       colored (~> 1.2)
