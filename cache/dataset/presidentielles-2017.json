@@ -65,12 +65,12 @@
             }
           ],
           "name": "Premier tour",
-          "inscrits": 47582183.0,
-          "abstentions": 10578455.0,
-          "votants": 37003728.0,
-          "blancs": 659997.0,
-          "nuls": 289337.0,
-          "exprimes": 36054394.0
+          "inscrits": 47582183,
+          "abstentions": 10578455,
+          "votants": 37003728,
+          "blancs": 659997,
+          "nuls": 289337,
+          "exprimes": 36054394
         },
         {
           "candidats": [
@@ -86,12 +86,12 @@
             }
           ],
           "name": "Second tour",
-          "inscrits": 47568693.0,
-          "abstentions": 12101366.0,
-          "votants": 35467327.0,
-          "blancs": 3021499.0,
-          "nuls": 1064225.0,
-          "exprimes": 31381603.0
+          "inscrits": 47568693,
+          "abstentions": 12101366,
+          "votants": 35467327,
+          "blancs": 3021499,
+          "nuls": 1064225,
+          "exprimes": 31381603
         }
       ]
     }

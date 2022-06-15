@@ -11,92 +11,92 @@
             {
               "nom": "Nathalie ARTHAUD",
               "liste": "",
-              "voix": 195850
+              "voix": 195890
             },
             {
               "nom": "Fabien ROUSSEL",
               "liste": "",
-              "voix": 799164
+              "voix": 799344
             },
             {
               "nom": "Emmanuel MACRON",
               "liste": "",
-              "voix": 9558923
+              "voix": 9560426
             },
             {
               "nom": "Jean LASSALLE",
               "liste": "",
-              "voix": 1095498
+              "voix": 1095685
             },
             {
               "nom": "Marine LE PEN",
               "liste": "",
-              "voix": 8107981
+              "voix": 8109650
             },
             {
               "nom": "Éric ZEMMOUR",
               "liste": "",
-              "voix": 2442083
+              "voix": 2442627
             },
             {
               "nom": "Jean-Luc MÉLENCHON",
               "liste": "",
-              "voix": 7603780
+              "voix": 7605425
             },
             {
               "nom": "Anne HIDALGO",
               "liste": "",
-              "voix": 604082
+              "voix": 604197
             },
             {
               "nom": "Yannick JADOT",
               "liste": "",
-              "voix": 1587210
+              "voix": 1587507
             },
             {
               "nom": "Valérie PÉCRESSE",
               "liste": "",
-              "voix": 1658035
+              "voix": 1658352
             },
             {
               "nom": "Philippe POUTOU",
               "liste": "",
-              "voix": 265777
+              "voix": 265823
             },
             {
               "nom": "Nicolas DUPONT-AIGNAN",
               "liste": "",
-              "voix": 718044
+              "voix": 718225
             }
           ],
           "name": "Premier tour",
-          "inscrits": 47302341,
-          "abstentions": 11890504,
-          "votants": 35411837,
-          "blancs": 538678,
-          "nuls": 236732,
-          "exprimes": 34636427
+          "inscrits": 47311319,
+          "abstentions": 11892620,
+          "votants": 35418699,
+          "blancs": 538769,
+          "nuls": 236779,
+          "exprimes": 34643151
         },
         {
           "candidats": [
             {
               "nom": "Emmanuel MACRON",
               "liste": "",
-              "voix": 18765228
+              "voix": 18768402
             },
             {
               "nom": "Marine LE PEN",
               "liste": "",
-              "voix": 13285816
+              "voix": 13288473
             }
           ],
           "name": "Second tour",
-          "inscrits": 48742720,
-          "abstentions": 13653222,
-          "votants": 35089498,
-          "blancs": 2233378,
-          "nuls": 805076,
-          "exprimes": 32051044
+          "inscrits": 48751696,
+          "abstentions": 13655715,
+          "votants": 35095981,
+          "blancs": 2233862,
+          "nuls": 805244,
+          "exprimes": 32056875
         }
       ]
     }

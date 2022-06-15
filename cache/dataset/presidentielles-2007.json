@@ -11,90 +11,90 @@
             {
               "nom": "SCHIVARDI (PT)",
               "liste": "",
-              "voix": 122774
+              "voix": 123540
             },
             {
               "nom": "LAGUILLER (LO)",
               "liste": "",
-              "voix": 485225
+              "voix": 487857
             },
             {
               "nom": "BESANCENOT (LCR)",
               "liste": "",
-              "voix": 1490804
+              "voix": 1498581
             },
             {
               "nom": "BOVE",
               "liste": "",
-              "voix": 480029
+              "voix": 483008
             },
             {
               "nom": "BUFFET (PC)",
               "liste": "",
-              "voix": 704064
+              "voix": 707268
             },
             {
               "nom": "ROYAL (PS)",
               "liste": "",
-              "voix": 9452217
+              "voix": 9500112
             },
             {
               "nom": "VOYNET (VERTS)",
               "liste": "",
-              "voix": 572719
+              "voix": 576666
             },
             {
               "nom": "BAYROU (UDF)",
               "liste": "",
-              "voix": 6776575
+              "voix": 6820119
             },
             {
               "nom": "SARKOZY (UMP)",
               "liste": "",
-              "voix": 11374281
+              "voix": 11448663
             },
             {
               "nom": "DE VILLIERS MPF)",
               "liste": "",
-              "voix": 812885
+              "voix": 818407
             },
             {
               "nom": "LE PEN (FN)",
               "liste": "",
-              "voix": 3807512
+              "voix": 3834530
             },
             {
               "nom": "NIHOUS (CNPT)",
               "liste": "",
-              "voix": 418174
+              "voix": 420645
             }
           ],
           "name": "Premier tour",
-          "inscrits": 44209214,
-          "abstentions": 7180090,
-          "votants": 37029124,
-          "nuls": 531865,
-          "exprimes": 36497259
+          "inscrits": 44472834,
+          "abstentions": 7218592,
+          "votants": 37254242,
+          "nuls": 534846,
+          "exprimes": 36719396
         },
         {
           "candidats": [
             {
               "nom": "ROYAL (PS)",
               "liste": "",
-              "voix": 16702794
+              "voix": 16790747
             },
             {
               "nom": "SARKOZY (UMP)",
               "liste": "",
-              "voix": 18856389
+              "voix": 18983551
             }
           ],
           "name": "Second tour",
-          "inscrits": 44208379,
-          "abstentions": 7091206,
-          "votants": 37117173,
-          "nuls": 1557990,
-          "exprimes": 35559183
+          "inscrits": 44472025,
+          "abstentions": 7130185,
+          "votants": 37341840,
+          "nuls": 1567542,
+          "exprimes": 35774298
         }
       ]
     }

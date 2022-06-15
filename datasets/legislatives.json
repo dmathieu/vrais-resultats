@@ -1,5 +1,17 @@
 [
 	{
+		"name": "Législatives 2022",
+		"format": "xlsx",
+		"data": [
+			{
+				"name": "Premier tour",
+				"url": "https://www.data.gouv.fr/fr/datasets/r/3cf49bf4-c171-4328-b002-fea995cb85d8"
+			}
+		],
+		"reducer": "legislatives",
+		"annee": 2022
+	},
+	{
 		"name": "Législatives 2017",
 		"format": "xlsx",
 		"data": [

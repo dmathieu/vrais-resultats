@@ -11,110 +11,110 @@
             {
               "nom": "GLUCKSTEIN (PT)",
               "liste": "",
-              "voix": 131701
+              "voix": 132451
             },
             {
               "nom": "LAGUILLER (LO)",
               "liste": "",
-              "voix": 1618065
+              "voix": 1626237
             },
             {
               "nom": "BESANCENOT (LCR)",
               "liste": "",
-              "voix": 1201191
+              "voix": 1207869
             },
             {
               "nom": "HUE (PCF)",
               "liste": "",
-              "voix": 955632
+              "voix": 959546
             },
             {
               "nom": "JOSPIN (PS)",
               "liste": "",
-              "voix": 4556214
+              "voix": 4578160
             },
             {
               "nom": "TAUBIRA (PRG)",
               "liste": "",
-              "voix": 653048
+              "voix": 656340
             },
             {
               "nom": "CHEVENEMENT (P. REP)",
               "liste": "",
-              "voix": 1500105
+              "voix": 1510763
             },
             {
               "nom": "MAMERE (VERTS)",
               "liste": "",
-              "voix": 1476718
+              "voix": 1485739
             },
             {
               "nom": "LEPAGE (CAP 21)",
               "liste": "",
-              "voix": 528392
+              "voix": 532174
             },
             {
               "nom": "BAYROU (UDF)",
               "liste": "",
-              "voix": 1928104
+              "voix": 1940800
             },
             {
               "nom": "MADELIN (DL)",
               "liste": "",
-              "voix": 1095881
+              "voix": 1104512
             },
             {
               "nom": "CHIRAC (UMP)",
               "liste": "",
-              "voix": 5593721
+              "voix": 5622878
             },
             {
               "nom": "BOUTIN (UDF DISS.)",
               "liste": "",
-              "voix": 334553
+              "voix": 336565
             },
             {
               "nom": "LE PEN (FN)",
               "liste": "",
-              "voix": 4759542
+              "voix": 4796107
             },
             {
               "nom": "MEGRET (MNR)",
               "liste": "",
-              "voix": 659450
+              "voix": 665399
             },
             {
               "nom": "SAINT-JOSSE (CNPT)",
               "liste": "",
-              "voix": 1197698
+              "voix": 1204031
             }
           ],
           "name": "Premier tour",
-          "inscrits": 40567927,
-          "abstentions": 11389754,
-          "votants": 29178173,
-          "nuls": 988158,
-          "exprimes": 28190015
+          "inscrits": 40808156,
+          "abstentions": 11454583,
+          "votants": 29353573,
+          "nuls": 994002,
+          "exprimes": 28359571
         },
         {
           "candidats": [
             {
               "nom": "CHIRAC (UMP)",
               "liste": "",
-              "voix": 25242975
+              "voix": 25387974
             },
             {
               "nom": "LE PEN (FN)",
               "liste": "",
-              "voix": 5474450
+              "voix": 5512195
             }
           ],
           "name": "Second tour",
-          "inscrits": 40565332,
-          "abstentions": 8097586,
-          "votants": 32467746,
-          "nuls": 1750321,
-          "exprimes": 30717425
+          "inscrits": 40805544,
+          "abstentions": 8144561,
+          "votants": 32660983,
+          "nuls": 1760814,
+          "exprimes": 30900169
         }
       ]
     }
