@@ -6,6 +6,10 @@
 			{
 				"name": "Premier tour",
 				"url": "https://www.data.gouv.fr/fr/datasets/r/3cf49bf4-c171-4328-b002-fea995cb85d8"
+			},
+			{
+				"name": "Second tour",
+				"url": "https://www.data.gouv.fr/fr/datasets/r/a3c524fd-eed6-4be2-99ca-bc3920824953"
 			}
 		],
 		"reducer": "legislatives",
