@@ -109,7 +109,7 @@ GEM
     lumberjack (1.2.8)
     memo_wise (1.7.0)
     method_source (1.0.0)
-    minitest (5.16.3)
+    minitest (5.17.0)
     multi_json (1.15.0)
     multipart-post (2.2.3)
     nanoc (4.12.14)
