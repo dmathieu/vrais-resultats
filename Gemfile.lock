@@ -263,7 +263,7 @@ GEM
     standard-performance (1.1.0)
       lint_roller (~> 1.0)
       rubocop-performance (~> 1.18.0)
-    stringio (3.0.6)
+    stringio (3.0.7)
     thor (1.2.2)
     tty-color (0.6.0)
     tty-command (0.10.1)
