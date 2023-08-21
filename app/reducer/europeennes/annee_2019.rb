@@ -15,7 +15,7 @@ module VR
       end
 
       def skip_row_if(i, row)
-        return true if i < 1
+        true if i < 1
       end
 
       def row_name(row)

@@ -18,7 +18,7 @@ module VR
         return true if i < 1
         return true if row.compact.empty?
         name = row_name(row)
-        return true if name == false || name.nil?
+        true if name == false || name.nil?
       end
 
       def row_name(row)
