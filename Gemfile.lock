@@ -116,12 +116,12 @@ GEM
     minitest (5.20.0)
     multi_json (1.15.0)
     multipart-post (2.3.0)
-    nanoc (4.12.16)
+    nanoc (4.12.17)
       addressable (~> 2.5)
       colored (~> 1.2)
       nanoc-checking (~> 1.0, >= 1.0.2)
-      nanoc-cli (= 4.12.16)
-      nanoc-core (= 4.12.16)
+      nanoc-cli (= 4.12.17)
+      nanoc-core (= 4.12.17)
       nanoc-deploying (~> 1.0)
       parallel (~> 1.12)
       tty-command (~> 0.8)
@@ -129,12 +129,12 @@ GEM
     nanoc-checking (1.0.2)
       nanoc-cli (~> 4.12, >= 4.12.4)
       nanoc-core (~> 4.12, >= 4.12.4)
-    nanoc-cli (4.12.16)
+    nanoc-cli (4.12.17)
       cri (~> 2.15)
       diff-lcs (~> 1.3)
-      nanoc-core (= 4.12.16)
+      nanoc-core (= 4.12.17)
       zeitwerk (~> 2.1)
-    nanoc-core (4.12.16)
+    nanoc-core (4.12.17)
       concurrent-ruby (~> 1.1)
       ddmetrics (~> 1.0)
       ddplugin (~> 1.0)
@@ -293,7 +293,7 @@ GEM
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
     webrick (1.8.1)
-    zeitwerk (2.6.11)
+    zeitwerk (2.6.12)
 
 PLATFORMS
   x86_64-darwin-19
@@ -311,7 +311,7 @@ DEPENDENCIES
   faraday
   faraday_middleware
   guard-nanoc
-  nanoc (~> 4.12.16)
+  nanoc (~> 4.12.17)
   opentelemetry-api
   opentelemetry-exporter-otlp
   opentelemetry-instrumentation-faraday
