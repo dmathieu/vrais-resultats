@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "nanoc", "~> 4.12.17"
+gem "nanoc", "~> 4.12.18"
 gem "adsf"
 gem "rake"
 
