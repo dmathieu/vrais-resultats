@@ -14,7 +14,7 @@ module Rails
   def self.application
     OpenStruct.new(
       config: OpenStruct.new(
-        load_database_yaml: {},
+        load_database_yaml: {}
       )
     )
   end
