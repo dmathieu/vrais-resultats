@@ -1,5 +1,6 @@
 $LOAD_PATH.unshift File.expand_path("app", __dir__)
 require "vr"
+require "ostruct"
 
 module Rails
   def self.root
@@ -8,6 +9,14 @@ module Rails
 
   def self.env
     VR.database_env
+  end
+
+  def self.application
+    OpenStruct.new(
+      config: OpenStruct.new(
+        load_database_yaml: {}
+      )
+    )
   end
 end
 
