@@ -127,7 +127,7 @@ GEM
     minitest (5.20.0)
     multi_json (1.15.0)
     multipart-post (2.3.0)
-    mutex_m (0.1.2)
+    mutex_m (0.2.0)
     nanoc (4.12.18)
       addressable (~> 2.5)
       colored (~> 1.2)
