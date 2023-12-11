@@ -265,7 +265,7 @@ GEM
     sass (3.4.25)
     sassc (2.4.0)
       ffi (~> 1.9)
-    set (1.0.3)
+    set (1.0.4)
     shellany (0.0.1)
     slow_enumerator_tools (1.1.0)
     sorted_set (1.0.3)
