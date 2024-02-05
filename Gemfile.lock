@@ -48,7 +48,8 @@ GEM
       sass (>= 3.2, < 3.5)
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
-    crack (0.4.5)
+    crack (0.4.6)
+      bigdecimal
       rexml
     cri (2.15.11)
     database_cleaner-active_record (2.1.0)
