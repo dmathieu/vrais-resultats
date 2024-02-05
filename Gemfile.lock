@@ -57,7 +57,7 @@ GEM
     database_cleaner-core (2.0.1)
     ddmetrics (1.1.0)
     ddplugin (1.0.3)
-    diff-lcs (1.5.0)
+    diff-lcs (1.5.1)
     drb (2.2.0)
       ruby2_keywords
     execjs (2.9.1)
