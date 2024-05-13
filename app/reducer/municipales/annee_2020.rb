@@ -2,7 +2,7 @@
 
 module VR
   module Reducer
-    module Municipales
+    class Municipales
       class Annee2020 < Municipales
         private
 

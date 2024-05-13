@@ -2,7 +2,7 @@
 
 module VR
   module Reducer
-    module Regionales
+    class Regionales
       class Annee2021 < Regionales
         private
 

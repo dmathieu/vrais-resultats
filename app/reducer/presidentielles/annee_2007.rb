@@ -2,7 +2,7 @@
 
 module VR
   module Reducer
-    module Presidentielles
+    class Presidentielles
       class Annee2007 < Presidentielles
         private
 

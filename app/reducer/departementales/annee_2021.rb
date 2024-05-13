@@ -2,7 +2,7 @@
 
 module VR
   module Reducer
-    module Departementales
+    class Departementales
       class Annee2021 < Departementales
         private
 

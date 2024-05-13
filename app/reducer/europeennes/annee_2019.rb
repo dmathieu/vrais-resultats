@@ -2,7 +2,7 @@
 
 module VR
   module Reducer
-    module Europeennes
+    class Europeennes
       class Annee2019 < Europeennes
         private
 

@@ -2,7 +2,7 @@
 
 module VR
   module Reducer
-    module Legislatives
+    class Legislatives
       class Annee2017 < Legislatives
         private
 
