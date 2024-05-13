@@ -126,7 +126,7 @@ GEM
     method_source (1.1.0)
     minitest (5.22.3)
     multi_json (1.15.0)
-    multipart-post (2.4.0)
+    multipart-post (2.4.1)
     mutex_m (0.2.0)
     nanoc (4.12.21)
       addressable (~> 2.5)
