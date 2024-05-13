@@ -1,43 +1,49 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
 
-gem "nanoc", "~> 4.12.21"
-gem "adsf"
-gem "rake"
+source 'https://rubygems.org'
 
-gem "guard-nanoc"
+gem 'adsf'
+gem 'nanoc', '~> 4.12.21'
+gem 'rake'
 
-gem "w3c_validators"
+gem 'guard-nanoc'
+
+gem 'w3c_validators'
 
 # CSS Feed
-gem "builder"
+gem 'builder'
 
 # CSS
-gem "compass", "~> 1.0.3"
-gem "bootstrap-sass", "~> 3.4.1"
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'compass', '~> 1.0.3'
 
 # Results generation
-gem "faraday"
-gem "faraday_middleware"
-gem "roo"
-gem "roo-xls"
-gem "activesupport"
-gem "activerecord"
-gem "sqlite3"
+gem 'activerecord'
+gem 'activesupport'
+gem 'faraday'
+gem 'faraday_middleware'
+gem 'roo'
+gem 'roo-xls'
+gem 'sqlite3'
 
-gem "opentelemetry-api"
-gem "opentelemetry-sdk"
-gem "opentelemetry-instrumentation-faraday"
-gem "opentelemetry-exporter-otlp"
+gem 'opentelemetry-api'
+gem 'opentelemetry-exporter-otlp'
+gem 'opentelemetry-instrumentation-faraday'
+gem 'opentelemetry-sdk'
 
-gem "pry"
+gem 'pry'
 
 group :development do
-  gem "webrick"
-  gem "rspec"
-  gem "webmock"
-  gem "standard"
+  gem 'rspec'
+  gem 'webmock'
+  gem 'webrick'
+
+  gem 'rubocop'
+  gem 'rubocop-performance'
+  gem 'rubocop-rake'
+  gem 'rubocop-rspec'
 end
 
 group :test do
-  gem "database_cleaner-active_record"
+  gem 'database_cleaner-active_record'
 end

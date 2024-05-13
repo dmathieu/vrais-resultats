@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module VR
   module Reducer
     class Departementales < Base
@@ -5,4 +7,4 @@ module VR
   end
 end
 
-require "reducer/departementales/annee_2021"
+require 'reducer/departementales/annee_2021'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateResults < ActiveRecord::Migration[5.2]
   def change
     create_table :results do |t|
@@ -12,6 +14,6 @@ class CreateResults < ActiveRecord::Migration[5.2]
       t.integer :exprimes, default: 0
     end
 
-    add_index :results, [:area_id, :round_id], unique: true
+    add_index :results, %i[area_id round_id], unique: true
   end
 end

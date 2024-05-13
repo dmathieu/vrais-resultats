@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module VR
   module Reducer
     class Base
@@ -21,7 +23,7 @@ module VR
       end
 
       def parse_data
-        VR.tracer.in_span("reducer.parse_data") do |span|
+        VR.tracer.in_span('reducer.parse_data') do |_span|
           data = {}
           @mapper.each_with_index do |file, index|
             data = parse_file(file, index, data)
@@ -31,7 +33,7 @@ module VR
       end
 
       def parse_file(file, index, data)
-        VR.tracer.in_span("reducer.parse_file") do |span|
+        VR.tracer.in_span('reducer.parse_file') do |_span|
           file[:content].each_with_index do |row, i|
             @header = row if header_row == i
             next if skip_row_if(i, row)
@@ -43,10 +45,10 @@ module VR
 
             keymap.each do |k|
               l[k[:key]] += if k.key?(:fn)
-                k[:fn].call(row).to_i
-              else
-                row[k[:index]].to_i
-              end
+                              k[:fn].call(row).to_i
+                            else
+                              row[k[:index]].to_i
+                            end
             end
 
             l[:candidats] = update_candidats(l[:candidats], row)
@@ -58,7 +60,7 @@ module VR
         end
       end
 
-      def default_result(entry, name)
+      def default_result(_entry, name)
         h = {
           candidats: [],
           name:

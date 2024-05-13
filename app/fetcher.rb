@@ -1,9 +1,11 @@
-require "faraday"
-require "faraday_middleware"
+# frozen_string_literal: true
+
+require 'faraday'
+require 'faraday_middleware'
 
 module VR
   class Fetcher
-    @@path_dir = File.expand_path("..", __dir__)
+    @@path_dir = File.expand_path('..', __dir__)
     def self.set_path_dir(path)
       @@path_dir = path
     end
@@ -20,14 +22,14 @@ module VR
       @config[:data].each_with_index.map do |v, k|
         path = cache_path(k)
         File.write(path, download(v[:url]).body) unless File.exist?(path)
-        {name: v[:name], path:}
+        { name: v[:name], path: }
       end
     end
 
     private
 
     def cache_path(name)
-      File.join(@@path_dir, "cache", "fetcher", "#{@config[:reducer]}-#{@config[:annee]}.#{name}.#{@config[:format]}")
+      File.join(@@path_dir, 'cache', 'fetcher', "#{@config[:reducer]}-#{@config[:annee]}.#{name}.#{@config[:format]}")
     end
 
     def download(url)

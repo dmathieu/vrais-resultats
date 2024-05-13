@@ -1,29 +1,29 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 require 'rubygems'
 require 'bundler/setup'
 
 require 'fileutils'
 
-$LOAD_PATH.unshift File.expand_path("../app", __dir__)
-require "vr"
+$LOAD_PATH.unshift File.expand_path('../app', __dir__)
+require 'vr'
 
-FileUtils.mkdir_p "cache/fetcher"
-FileUtils.mkdir_p "cache/dataset"
-ds = VR::Dataset.new("datasets/")
+FileUtils.mkdir_p 'cache/fetcher'
+FileUtils.mkdir_p 'cache/dataset'
+ds = VR::Dataset.new('datasets/')
 
-print "Migrating database"
+print 'Migrating database'
 `bundle exec rake db:create db:migrate`
 
 print "Starting index\n"
 ds.each do |content|
-  begin
-    indexer = VR::Indexer.new(content)
+  indexer = VR::Indexer.new(content)
 
-    indexer.run
-    print "Indexed #{content[:name]}\n"
-  rescue NameError => e
-    print "Ignoring #{content[:name]} - #{e}\n"
-  end
+  indexer.run
+  print "Indexed #{content[:name]}\n"
+rescue NameError => e
+  print "Ignoring #{content[:name]} - #{e}\n"
 end
 
 OpenTelemetry.tracer_provider.shutdown

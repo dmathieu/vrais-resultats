@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module VR
   module Reducer
     class Presidentielles < Base
@@ -5,8 +7,8 @@ module VR
   end
 end
 
-require "reducer/presidentielles/annee_2022"
-require "reducer/presidentielles/annee_2017"
-require "reducer/presidentielles/annee_2012"
-require "reducer/presidentielles/annee_2007"
-require "reducer/presidentielles/annee_2002"
+require 'reducer/presidentielles/annee_2022'
+require 'reducer/presidentielles/annee_2017'
+require 'reducer/presidentielles/annee_2012'
+require 'reducer/presidentielles/annee_2007'
+require 'reducer/presidentielles/annee_2002'
