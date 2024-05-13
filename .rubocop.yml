@@ -13,3 +13,15 @@ AllCops:
   NewCops: enable # Opt-in to newly added rules
   Exclude:
     - 'vendor/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Metrics/AbcSize:
+  Enabled: false
