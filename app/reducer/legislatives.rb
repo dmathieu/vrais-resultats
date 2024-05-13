@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module VR
   module Reducer
     class Legislatives < Base
@@ -5,5 +7,5 @@ module VR
   end
 end
 
-require "reducer/legislatives/annee_2022"
-require "reducer/legislatives/annee_2017"
+require 'reducer/legislatives/annee_2022'
+require 'reducer/legislatives/annee_2017'

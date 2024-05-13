@@ -1,10 +1,12 @@
-require "json"
+# frozen_string_literal: true
+
+require 'json'
 
 module VR
   class Dataset
     include Enumerable
 
-    @@path_dir = File.expand_path("..", __dir__)
+    @@path_dir = File.expand_path('..', __dir__)
     def self.set_path_dir(path)
       @@path_dir = path
     end
@@ -13,10 +15,10 @@ module VR
       @path = path
     end
 
-    def each(&block)
+    def each
       config.each do |c|
         c.each do |f|
-          VR.tracer.in_span("dataset.#{f[:name].parameterize}") do |span|
+          VR.tracer.in_span("dataset.#{f[:name].parameterize}") do |_span|
             mapper = VR::Mapper.new(f)
             path = cache_path(f)
 
@@ -25,7 +27,7 @@ module VR
               File.write(path, JSON.pretty_generate(r.content))
             end
 
-            block.call(JSON.parse(File.read(path)).deep_symbolize_keys)
+            yield(JSON.parse(File.read(path)).deep_symbolize_keys)
           end
         end
       end
@@ -34,7 +36,7 @@ module VR
     private
 
     def config
-      @config ||= Dir.glob(@path + "/**/*.json").map do |f|
+      @config ||= Dir.glob("#{@path}/**/*.json").map do |f|
         JSON.parse(File.read(File.expand_path(f))).map(&:deep_symbolize_keys)
       rescue JSON::ParserError => e
         raise "JSON parse error in #{f}: #{e}"
@@ -42,7 +44,7 @@ module VR
     end
 
     def cache_path(config)
-      File.join(@@path_dir, "cache", "dataset", "#{config[:reducer]}-#{config[:annee]}.json")
+      File.join(@@path_dir, 'cache', 'dataset', "#{config[:reducer]}-#{config[:annee]}.json")
     end
   end
 end

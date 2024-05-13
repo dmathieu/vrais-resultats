@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateRounds < ActiveRecord::Migration[5.2]
   def change
     create_table :rounds do |t|
@@ -5,6 +7,6 @@ class CreateRounds < ActiveRecord::Migration[5.2]
       t.string :name, null: false
     end
 
-    add_index :rounds, [:name, :event_id], unique: true
+    add_index :rounds, %i[name event_id], unique: true
   end
 end

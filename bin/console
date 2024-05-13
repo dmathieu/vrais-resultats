@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
-require "pry"
+# frozen_string_literal: true
 
-$LOAD_PATH.unshift File.expand_path("../app", __dir__)
-require "vr"
+require 'pry'
+
+$LOAD_PATH.unshift File.expand_path('../app', __dir__)
+require 'vr'
 Pry.start

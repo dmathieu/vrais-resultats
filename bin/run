@@ -1,26 +1,28 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 require 'optparse'
 
 OptionParser.new do |opts|
-  opts.banner = "Usage: bin/run [options]"
+  opts.banner = 'Usage: bin/run [options]'
 
-  opts.on("--dev", "Run in dev mode") do
-    ENV["VR_ENV"] = "dev"
+  opts.on('--dev', 'Run in dev mode') do
+    ENV['VR_ENV'] = 'dev'
   end
 end.parse!
 
-puts "Running bundle install"
+puts 'Running bundle install'
 `bundle install`
 
 t = []
 
 t << Thread.new do
-  puts "Running the files auto-reloaded"
+  puts 'Running the files auto-reloaded'
   `bundle exec guard`
 end
 
 t << Thread.new do
-  puts "Running the server"
+  puts 'Running the server'
   `bundle exec nanoc view`
 end
 

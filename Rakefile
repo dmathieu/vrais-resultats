@@ -1,6 +1,8 @@
-$LOAD_PATH.unshift File.expand_path("app", __dir__)
-require "vr"
-require "ostruct"
+# frozen_string_literal: true
+
+$LOAD_PATH.unshift File.expand_path('app', __dir__)
+require 'vr'
+require 'ostruct'
 
 module Rails
   def self.root
@@ -21,11 +23,11 @@ module Rails
 end
 
 ActiveRecord::Tasks::DatabaseTasks.env = VR.database_env
-ActiveRecord::Tasks::DatabaseTasks.db_dir = File.expand_path("../db", __FILE__)
+ActiveRecord::Tasks::DatabaseTasks.db_dir = File.expand_path('db', __dir__)
 ActiveRecord::Tasks::DatabaseTasks.database_configuration = ActiveRecord::Base.configurations
-ActiveRecord::Tasks::DatabaseTasks.migrations_paths = [File.join(ActiveRecord::Tasks::DatabaseTasks.db_dir, "migrate")]
+ActiveRecord::Tasks::DatabaseTasks.migrations_paths = [File.join(ActiveRecord::Tasks::DatabaseTasks.db_dir, 'migrate')]
 
 task :environment do
 end
 
-load "active_record/railties/databases.rake"
+load 'active_record/railties/databases.rake'

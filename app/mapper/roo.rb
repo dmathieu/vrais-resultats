@@ -1,16 +1,18 @@
-require "roo"
-require "roo-xls"
+# frozen_string_literal: true
+
+require 'roo'
+require 'roo-xls'
 
 module VR
   module Mapper
     class Roo < Base
       include Enumerable
 
-      def each(&block)
+      def each
         raw_data.each do |v|
-          VR.tracer.in_span("mapper.each") do |span|
-            span.set_attribute("mapper", v[:name])
-            block.call({
+          VR.tracer.in_span('mapper.each') do |span|
+            span.set_attribute('mapper', v[:name])
+            yield({
               name: v[:name],
               content: spreadsheet(v)
             })
@@ -21,7 +23,7 @@ module VR
       private
 
       def spreadsheet(v)
-        VR.tracer.in_span("mapper.open") do |span|
+        VR.tracer.in_span('mapper.open') do |_span|
           ::Roo::Spreadsheet.open(v[:path]).sheet(0)
         end
       end
