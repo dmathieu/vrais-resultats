@@ -35,7 +35,11 @@ group :development do
   gem "webrick"
   gem "rspec"
   gem "webmock"
-  gem "standard"
+
+  gem "rubocop"
+  gem "rubocop-rake"
+  gem "rubocop-rspec"
+  gem "rubocop-performance"
 end
 
 group :test do
