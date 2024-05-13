@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module VR
   class Indexer
     def initialize(content)
@@ -8,7 +10,7 @@ module VR
       ActiveRecord::Base.transaction do
         return if event.populated?
 
-        VR.tracer.in_span("index.run") do |span|
+        VR.tracer.in_span('index.run') do |_span|
           event.areas.delete_all
           event.rounds.delete_all
 
@@ -24,7 +26,7 @@ module VR
     private
 
     def run_data(data)
-      VR.tracer.in_span("indexer.run_data") do |span|
+      VR.tracer.in_span('indexer.run_data') do |_span|
         area = event.areas.create!(name: data[:name], path: data[:path])
 
         data[:resultats].each do |resultat|

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Election
   def all_elections
     @items.select { |i| i.key?(:resultats) }
@@ -8,24 +10,24 @@ module Election
   end
 
   def real_result(resultat, candidat)
-    ((candidat[:voix].to_f / resultat[:inscrits].to_f) * 100.0).floor(2)
+    ((candidat[:voix].to_f / resultat[:inscrits]) * 100.0).floor(2)
   end
 
   def official_result(resultat, candidat)
-    ((candidat[:voix].to_f / resultat[:exprimes].to_f) * 100.0).floor(2)
+    ((candidat[:voix].to_f / resultat[:exprimes]) * 100.0).floor(2)
   end
 
   def all_data(resultat)
     candidats = resultat[:candidats].dup
 
     candidats << {
-      nom: "Abstentions",
-      liste: "",
+      nom: 'Abstentions',
+      liste: '',
       voix: resultat[:abstentions]
     }
     candidats << {
-      nom: "Blancs + Nuls",
-      liste: "",
+      nom: 'Blancs + Nuls',
+      liste: '',
       voix: resultat.fetch(:blancs, 0) + resultat.fetch(:nuls, 0)
     }
 

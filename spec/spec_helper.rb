@@ -1,11 +1,13 @@
-ENV["VR_DATABASE_ENV"] = "test"
-$LOAD_PATH.unshift File.expand_path("../app", __dir__)
-require "vr"
+# frozen_string_literal: true
 
-require "webmock/rspec"
+ENV['VR_DATABASE_ENV'] = 'test'
+$LOAD_PATH.unshift File.expand_path('../app', __dir__)
+require 'vr'
+
+require 'webmock/rspec'
 WebMock.disable_net_connect!
 
-require "database_cleaner/active_record"
+require 'database_cleaner/active_record'
 
 `VR_DATABASE_ENV=test bundle exec rake db:schema:load`
 
@@ -25,25 +27,25 @@ RSpec.configure do |config|
     DatabaseCleaner.clean_with(:truncation)
   end
 
-  config.around(:each) do |example|
+  config.around do |example|
     DatabaseCleaner.cleaning do
       example.run
     end
   end
 
-  config.around :each do |s|
+  config.around do |s|
     Dir.mktmpdir do |dir|
       VR::Fetcher.set_path_dir(dir)
       VR::Dataset.set_path_dir(dir)
-      FileUtils.mkdir_p File.join(dir, "cache/fetcher")
-      FileUtils.mkdir_p File.join(dir, "cache/dataset")
+      FileUtils.mkdir_p File.join(dir, 'cache/fetcher')
+      FileUtils.mkdir_p File.join(dir, 'cache/dataset')
       s.run
-      VR::Fetcher.set_path_dir("")
-      VR::Dataset.set_path_dir("")
+      VR::Fetcher.set_path_dir('')
+      VR::Dataset.set_path_dir('')
     end
   end
 
   def file_fixture(name)
-    File.read(File.expand_path("spec/fixtures/" + name))
+    File.read(File.expand_path("spec/fixtures/#{name}"))
   end
 end

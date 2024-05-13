@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module VR
   module Mapper
     def self.new(config)
@@ -11,5 +13,5 @@ module VR
   end
 end
 
-require "mapper/base"
-require "mapper/roo"
+require 'mapper/base'
+require 'mapper/roo'
