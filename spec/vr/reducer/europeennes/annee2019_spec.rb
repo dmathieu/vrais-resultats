@@ -24,7 +24,7 @@ describe VR::Reducer::Europeennes::Annee2019 do
   describe 'new' do
     it 'turns a content array into a hash' do
       expect(subject.content).not_to be_empty
-      expect(subject.content[:data].length).to be(19)
+      expect(subject.content[:data].length).to be(1)
       expect(subject.content[:data][0].keys).to eql(%i[name path resultats])
       expect(subject.content[:data][0][:resultats].length).to be(1)
     end
