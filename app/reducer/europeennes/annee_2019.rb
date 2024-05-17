@@ -18,15 +18,15 @@ module VR
         end
 
         def skip_row_if(i, _row)
-          true if i < 1
+          i < 1
         end
 
-        def row_name(row)
-          row[1]
+        def row_name(_row)
+          ''
         end
 
-        def row_path(row)
-          row_name(row).parameterize
+        def row_path(_row)
+          ''
         end
 
         def default_hash(_entry, name)
