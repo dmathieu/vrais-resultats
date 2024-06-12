@@ -8,3 +8,4 @@ module VR
 end
 
 require 'reducer/europeennes/annee_2019'
+require 'reducer/europeennes/annee_2024'

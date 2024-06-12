@@ -1,0 +1,173 @@
+{
+  "name": "Européennes 2024",
+  "annee": 2024,
+  "data": [
+    {
+      "name": "",
+      "path": "",
+      "resultats": [
+        {
+          "candidats": [
+            {
+              "nom": "Humanite Souveraine",
+              "liste": "Pour Une Humanite Souveraine",
+              "voix": 1230.0
+            },
+            {
+              "nom": "Pour Une Democratie Reelle : Decidons Nous Memes !",
+              "liste": "Pour Une Democratie Reelle : Decidons Nous Memes !",
+              "voix": 1443.0
+            },
+            {
+              "nom": "La France Fiere, Menee Par Marion Marechal Et Soutenue Par éric Zemmour",
+              "liste": "La France Fiere, Menee Par Marion Marechal Et Soutenue Par éric Zemmour",
+              "voix": 1353127.0
+            },
+            {
+              "nom": "Lfi   Up",
+              "liste": "La France Insoumise   Union Populaire",
+              "voix": 2448711.0
+            },
+            {
+              "nom": "La France Revient",
+              "liste": "La France Revient ! Avec Jordan Bardella Et Marine Le Pen",
+              "voix": 7765945.0
+            },
+            {
+              "nom": "Europe écologie",
+              "liste": "Europe écologie",
+              "voix": 1361888.0
+            },
+            {
+              "nom": "Free Palestine",
+              "liste": "Free Palestine",
+              "voix": 14986.0
+            },
+            {
+              "nom": "Parti Animaliste",
+              "liste": "Parti Animaliste   Les Animaux Comptent, Votre Voix Aussi",
+              "voix": 495936.0
+            },
+            {
+              "nom": "Parti Revolutionnaire Communistes",
+              "liste": "Parti Revolutionnaire Communistes",
+              "voix": 1497.0
+            },
+            {
+              "nom": "Parti Pirate",
+              "liste": "Parti Pirate",
+              "voix": 28119.0
+            },
+            {
+              "nom": "Besoin D'europe",
+              "liste": "Besoin D'europe",
+              "voix": 3614628.0
+            },
+            {
+              "nom": "Pace",
+              "liste": "Pace   Parti Des Citoyens Européens, Pour L'armée Européenne, Pour L'europe Sociale , Pour La Planète !",
+              "voix": 7397.0
+            },
+            {
+              "nom": "équinoxe",
+              "liste": "équinoxe : écologie Pratique Et Renouveau Démocratique",
+              "voix": 73002.0
+            },
+            {
+              "nom": "Ecologie Positive",
+              "liste": "Ecologie Positive Et Territoires",
+              "voix": 104954.0
+            },
+            {
+              "nom": "Liste Asselineau Frexit",
+              "liste": "Liste Asselineau Frexit, Pour Le Pouvoir D'achat Et Pour La Paix",
+              "voix": 253037.0
+            },
+            {
+              "nom": "Paix Et Decroissance",
+              "liste": "Paix Et Decroissance",
+              "voix": 3726.0
+            },
+            {
+              "nom": "Pour Une Autre Europe",
+              "liste": "Pour Une Autre Europe",
+              "voix": 3725.0
+            },
+            {
+              "nom": "La Droite Pour Faire Entendre La Voix De La France En Europe",
+              "liste": "La Droite Pour Faire Entendre La Voix De La France En Europe",
+              "voix": 1794134.0
+            },
+            {
+              "nom": "Lutte Ouvriere",
+              "liste": "Lutte Ouvriere   Le Camp Des Travailleurs",
+              "voix": 121281.0
+            },
+            {
+              "nom": "Changer L'europe",
+              "liste": "Changer L'europe",
+              "voix": 13068.0
+            },
+            {
+              "nom": "Nlp",
+              "liste": "Nous Le Peuple",
+              "voix": 13889.0
+            },
+            {
+              "nom": "Urgence Revolution !",
+              "liste": "Pour Un Monde Sans Frontieres Ni Patrons, Urgence Revolution !",
+              "voix": 37436.0
+            },
+            {
+              "nom": "Ppl",
+              "liste": "\"Pour Le Pain, La Paix, La Liberté !\" Présentée Par Le Parti Des Travailleurs",
+              "voix": 4117.0
+            },
+            {
+              "nom": "L'europe Ca Suffit !",
+              "liste": "L'europe Ca Suffit !",
+              "voix": 229187.0
+            },
+            {
+              "nom": "Prenons Nous En Main",
+              "liste": "Non ! Prenons Nous En Mains",
+              "voix": 1736.0
+            },
+            {
+              "nom": "Forteresse Europe",
+              "liste": "Forteresse Europe   Liste D'unite Nationaliste",
+              "voix": 5096.0
+            },
+            {
+              "nom": "Reveil Eur",
+              "liste": "Réveiller L'europe",
+              "voix": 3423989.0
+            },
+            {
+              "nom": "Non à L'ue Et à L'otan, Communistes Pour La Paix Et Le Progrès Social",
+              "liste": "Non à L'ue Et à L'otan, Communistes Pour La Paix Et Le Progrès Social",
+              "voix": 3080.0
+            },
+            {
+              "nom": "Ar",
+              "liste": "Alliance Rurale",
+              "voix": 582895.0
+            },
+            {
+              "nom": "France Libre",
+              "liste": "France Libre",
+              "voix": 5474.0
+            }
+          ],
+          "name": "Résultats",
+          "inscrits": 49462981,
+          "abstentions": 23992530,
+          "votants": 25470451,
+          "blancs": 346234,
+          "nuls": 370393,
+          "exprimes": 24753824
+        }
+      ]
+    }
+  ]
+}
