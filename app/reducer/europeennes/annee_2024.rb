@@ -9,16 +9,16 @@ module VR
         def keymap
           [
             { key: :inscrits, index: 2, default: 0 },
-            { key: :abstentions, index: 3, default: 0 },
-            { key: :votants, index: 5, default: 0 },
-            { key: :blancs, index: 7, default: 0 },
-            { key: :nuls, index: 10, default: 0 },
-            { key: :exprimes, index: 13, default: 0 }
+            { key: :abstentions, index: 5, default: 0 },
+            { key: :votants, index: 3, default: 0 },
+            { key: :blancs, index: 10, default: 0 },
+            { key: :nuls, index: 13, default: 0 },
+            { key: :exprimes, index: 7, default: 0 }
           ]
         end
 
         def skip_row_if(index, _row)
-          index < 1
+          index < 2
         end
 
         def row_name(_row)
@@ -43,11 +43,11 @@ module VR
         end
 
         def candidats_split(entry)
-          entry.drop(16).each_slice(7).each do |c|
+          entry.drop(16).each_slice(8).each do |c|
             yield({
-              nom: c[3],
+              nom: c[2].titleize,
               voix: c[4],
-              liste: c[2]
+              liste: c[3].titleize
             })
           end
         end
