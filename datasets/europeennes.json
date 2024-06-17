@@ -1,11 +1,11 @@
 [
 	{
 		"name": "Européennes 2024",
-		"format": "xls",
+		"format": "xlsx",
 		"data": [
 			{
 				"name": "Résultats",
-				"url": "https://www.data.gouv.fr/fr/datasets/r/742618ab-eb59-4a00-801d-c2c3ebac1efd"
+				"url": "https://www.data.gouv.fr/fr/datasets/r/2690a1ed-13fb-4164-a006-2878000bf4c1"
 			}
 		],
 		"reducer": "europeennes",
