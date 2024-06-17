@@ -201,7 +201,7 @@ GEM
     opentelemetry-semantic_conventions (1.10.0)
       opentelemetry-api (~> 1.0)
     parallel (1.25.1)
-    parser (3.3.2.0)
+    parser (3.3.3.0)
       ast (~> 2.4.1)
       racc
     pastel (0.8.0)
@@ -224,7 +224,7 @@ GEM
       ffi (~> 1.0)
     rbtree (0.4.6)
     regexp_parser (2.9.2)
-    rexml (3.2.9)
+    rexml (3.3.0)
       strscan
     roo (2.10.1)
       nokogiri (~> 1)
@@ -261,8 +261,8 @@ GEM
       parser (>= 3.3.1.0)
     rubocop-capybara (2.21.0)
       rubocop (~> 1.41)
-    rubocop-factory_bot (2.26.0)
-      rubocop (~> 1.41)
+    rubocop-factory_bot (2.26.1)
+      rubocop (~> 1.61)
     rubocop-performance (1.21.0)
       rubocop (>= 1.48.1, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
