@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 
 gem 'adsf'
-gem 'nanoc', '~> 4.12.21'
+gem 'nanoc', '~> 4.13.0'
 gem 'rake'
 
 gem 'guard-nanoc'
