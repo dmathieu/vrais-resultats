@@ -24,7 +24,7 @@ module Generation
             @items,
             {
               election: election[:name],
-              name: bread.last.capitalize,
+              name: bread.last.tr('-', ' ').titleize,
               path: bread.join('/')
             }
           )
