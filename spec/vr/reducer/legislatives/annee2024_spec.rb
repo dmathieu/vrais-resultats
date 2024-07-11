@@ -30,9 +30,9 @@ describe VR::Reducer::Legislatives::Annee2024 do
   describe 'new' do
     it 'turns a content array into a hash' do
       expect(reducer.content).not_to be_empty
-      expect(reducer.content[:data].length).to eq(85)
+      expect(reducer.content[:data].length).to eq(14)
       expect(reducer.content[:data][0].keys).to eql(%i[name path resultats])
-      expect(reducer.content[:data][0][:resultats].length).to eq(1)
+      expect(reducer.content[:data][0][:resultats].length).to eq(2)
     end
   end
 end

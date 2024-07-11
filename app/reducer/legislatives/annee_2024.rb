@@ -26,7 +26,8 @@ module VR
         end
 
         def row_path(row)
-          "#{row[1].parameterize}/#{row[2]}"
+          code = row[0].to_i
+          "#{row[1].parameterize}/#{code < 10 ? '0' : ''}#{code}"
         end
 
         def candidats_split(entry)
