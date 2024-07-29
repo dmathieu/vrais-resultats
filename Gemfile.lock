@@ -217,7 +217,7 @@ GEM
       method_source (~> 1.0)
     psych (5.1.2)
       stringio
-    public_suffix (6.0.0)
+    public_suffix (6.0.1)
     racc (1.8.0)
     rack (3.1.7)
     rackup (2.1.0)
