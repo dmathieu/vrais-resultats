@@ -190,11 +190,11 @@ GEM
       opentelemetry-common (~> 0.20)
       opentelemetry-sdk (~> 1.2)
       opentelemetry-semantic_conventions
-    opentelemetry-instrumentation-base (0.22.4)
+    opentelemetry-instrumentation-base (0.22.5)
       opentelemetry-api (~> 1.0)
       opentelemetry-common (~> 0.21)
       opentelemetry-registry (~> 0.1)
-    opentelemetry-instrumentation-faraday (0.24.5)
+    opentelemetry-instrumentation-faraday (0.24.6)
       opentelemetry-api (~> 1.0)
       opentelemetry-instrumentation-base (~> 0.22.1)
     opentelemetry-registry (0.3.1)
