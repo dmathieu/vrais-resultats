@@ -138,12 +138,12 @@ GEM
     minitest (5.25.1)
     multi_json (1.15.0)
     multipart-post (2.4.1)
-    nanoc (4.13.0)
+    nanoc (4.13.1)
       addressable (~> 2.5)
       colored (~> 1.2)
       nanoc-checking (~> 1.0, >= 1.0.2)
-      nanoc-cli (= 4.13.0)
-      nanoc-core (= 4.13.0)
+      nanoc-cli (= 4.13.1)
+      nanoc-core (= 4.13.1)
       nanoc-deploying (~> 1.0)
       parallel (~> 1.12)
       tty-command (~> 0.8)
@@ -151,13 +151,13 @@ GEM
     nanoc-checking (1.0.5)
       nanoc-cli (~> 4.12, >= 4.12.5)
       nanoc-core (~> 4.12, >= 4.12.5)
-    nanoc-cli (4.13.0)
+    nanoc-cli (4.13.1)
       cri (~> 2.15)
       diff-lcs (~> 1.3)
-      nanoc-core (= 4.13.0)
+      nanoc-core (= 4.13.1)
       pry
       zeitwerk (~> 2.1)
-    nanoc-core (4.13.0)
+    nanoc-core (4.13.1)
       base64 (~> 0.2)
       concurrent-ruby (~> 1.1)
       ddmetrics (~> 1.0)
@@ -165,7 +165,6 @@ GEM
       immutable-ruby (~> 0.1)
       json_schema (~> 0.19)
       memo_wise (~> 1.5)
-      psych (>= 4.0, < 6.0)
       slow_enumerator_tools (~> 1.0)
       tty-platform (~> 0.2)
       zeitwerk (~> 2.1)
@@ -218,8 +217,6 @@ GEM
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    psych (5.2.0)
-      stringio
     public_suffix (6.0.1)
     racc (1.8.1)
     rack (3.1.8)
@@ -292,7 +289,6 @@ GEM
     sqlite3 (2.2.0-arm64-darwin)
     sqlite3 (2.2.0-x86_64-darwin)
     sqlite3 (2.2.0-x86_64-linux-gnu)
-    stringio (3.1.2)
     thor (1.3.2)
     timeout (0.4.1)
     tty-color (0.6.0)
@@ -332,7 +328,7 @@ DEPENDENCIES
   faraday
   faraday_middleware
   guard-nanoc
-  nanoc (~> 4.13.0)
+  nanoc (~> 4.13.1)
   opentelemetry-api
   opentelemetry-exporter-otlp
   opentelemetry-instrumentation-faraday
