@@ -277,7 +277,7 @@ GEM
     sass (3.4.25)
     sassc (2.4.0)
       ffi (~> 1.9)
-    securerandom (0.3.2)
+    securerandom (0.4.0)
     set (1.1.1)
     shellany (0.0.1)
     slow_enumerator_tools (1.1.0)
