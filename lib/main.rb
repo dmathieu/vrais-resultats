@@ -28,8 +28,7 @@ module Main
   end
 
   def is_current?(path)
-    @item.path == path ||
-      @item.path == "#{path}/"
+    [path, "#{path}/"].include?(@item.path)
   end
 end
 
