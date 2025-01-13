@@ -94,16 +94,16 @@ GEM
     ffi (1.17.1-x86_64-darwin)
     ffi (1.17.1-x86_64-linux-gnu)
     formatador (1.1.0)
-    google-protobuf (4.29.2-arm64-darwin)
+    google-protobuf (4.29.3-arm64-darwin)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.29.2-x86_64-darwin)
+    google-protobuf (4.29.3-x86_64-darwin)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.29.2-x86_64-linux)
+    google-protobuf (4.29.3-x86_64-linux)
       bigdecimal
       rake (>= 13)
-    googleapis-common-protos-types (1.16.0)
+    googleapis-common-protos-types (1.17.0)
       google-protobuf (>= 3.18, < 5.a)
     guard (2.19.1)
       formatador (>= 0.2.4)
