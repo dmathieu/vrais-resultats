@@ -152,7 +152,7 @@ GEM
       parallel (~> 1.12)
       tty-command (~> 0.8)
       tty-which (~> 0.4)
-    nanoc-checking (1.0.5)
+    nanoc-checking (1.0.6)
       nanoc-cli (~> 4.12, >= 4.12.5)
       nanoc-core (~> 4.12, >= 4.12.5)
     nanoc-cli (4.13.3)
