@@ -32,7 +32,7 @@ module Generation
         v[:election] = election[:name]
 
         path = "/#{election[:name].parameterize}"
-        path << ("/#{v[:path]}") unless v[:path].blank?
+        path << "/#{v[:path]}" unless v[:path].blank?
         path << '.erb'
 
         @items.create(content, v, path)
