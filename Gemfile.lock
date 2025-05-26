@@ -62,7 +62,7 @@ GEM
     ddmetrics (1.1.0)
     ddplugin (1.0.3)
     diff-lcs (1.6.2)
-    drb (2.2.1)
+    drb (2.2.3)
     execjs (2.10.0)
     faraday (1.10.4)
       faraday-em_http (~> 1.0)
