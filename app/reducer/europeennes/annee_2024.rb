@@ -17,7 +17,7 @@ module VR
           ]
         end
 
-        def skip_row_if(index, _row)
+        def skip?(index, _row)
           index < 2
         end
 
