@@ -17,7 +17,7 @@ module VR
           ]
         end
 
-        def skip_row_if(index, _row)
+        def skip?(index, _row)
           true if index < 1
         end
 
@@ -27,7 +27,7 @@ module VR
 
         def row_path(row)
           code = row[0].to_i
-          "#{row[1].parameterize}/#{code < 10 ? '0' : ''}#{code}"
+          "#{row[1].parameterize}/#{'0' if code < 10}#{code}"
         end
 
         def candidats_split(entry)

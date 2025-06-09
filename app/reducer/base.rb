@@ -36,7 +36,7 @@ module VR
         VR.tracer.in_span('reducer.parse_file') do |_span|
           file[:content].each_with_index do |row, i|
             @header = row if header_row == i
-            next if skip_row_if(i, row)
+            next if skip?(i, row)
             next if row.empty?
             next if row_name(row) == false || row_name(row).nil?
 
@@ -113,7 +113,7 @@ module VR
         raise NotImplementedError
       end
 
-      def skip_row_if(i, row)
+      def skip?(i, row)
         raise NotImplementedError
       end
 

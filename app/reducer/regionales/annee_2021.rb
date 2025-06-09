@@ -17,7 +17,7 @@ module VR
           ]
         end
 
-        def skip_row_if(i, row)
+        def skip?(i, row)
           return true if i < 1
           return true if row.compact.empty?
 

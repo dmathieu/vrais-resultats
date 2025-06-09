@@ -21,7 +21,7 @@ module VR
           ]
         end
 
-        def skip_row_if(i, _row)
+        def skip?(i, _row)
           i < 1
         end
 
