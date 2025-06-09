@@ -6,8 +6,6 @@ updates:
     interval: weekly
     time: "04:00"
   open-pull-requests-limit: 10
-  reviewers:
-  - dmathieu
   allow:
   - dependency-type: direct
   - dependency-type: indirect
@@ -17,5 +15,3 @@ updates:
     interval: weekly
     time: "04:00"
   open-pull-requests-limit: 10
-  reviewers:
-  - dmathieu
