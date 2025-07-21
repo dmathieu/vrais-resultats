@@ -139,7 +139,7 @@ GEM
     memo_wise (1.13.0)
     method_source (1.1.0)
     minitest (5.25.5)
-    multi_json (1.16.0)
+    multi_json (1.17.0)
     multipart-post (2.4.1)
     nanoc (4.13.5)
       addressable (~> 2.5)
